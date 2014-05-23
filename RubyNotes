@@ -478,7 +478,7 @@ while nemo_is_still_lost
 
 end
 
-do loop
+loop do
 
     puts "just keep swimming"
 
