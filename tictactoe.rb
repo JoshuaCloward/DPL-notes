@@ -152,4 +152,3 @@ turn = 0
           puts " "
           print final[2]
           puts " "
-    
