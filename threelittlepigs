@@ -1,0 +1,20 @@
+
+
+
+        #Joshua Cloward
+        #Three Little Pigs
+
+            while wolf_needs_sugar
+
+                find_pig_house
+                ask_for_sugar
+
+                if pigs_has_sugar
+                    blow_house_down
+                    take_sugar
+                    wolf_needs_sugar false
+                else
+                    blow_house_down
+                    wolf_needs_sugar true
+
+            else make_food

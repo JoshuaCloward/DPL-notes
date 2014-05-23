@@ -1,0 +1,29 @@
+
+
+Joshua Cloward
+
+Program to Cook Breakfast
+
+  grab_frying_pan
+  grab_utencils
+  grab_ingredients("eggs, "bacon", "toast")
+  thing_being_cooked =
+  place_ingredient_into_pan("bacon")
+
+  if thing_being_cooked_is_cooked
+    remove_ingredient_from_pan
+    place_ingredient_on_plate
+
+place_ingredient_into_pan("eggs")
+
+  if thing_being_cooked_is_cooked
+    remove_ingredient_from_pan
+    place_ingredient_on_plate
+
+place_ingredient_into_toaster("bread")
+
+  if thing_being_cooked_is_cooked
+    remove_ingredient_from_pan
+    place_ingredient_on_plate
+
+  serve_food

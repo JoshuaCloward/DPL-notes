@@ -1,6 +1,7 @@
 Ruby Notes
 
 001 Basic Notes
+  001.1 Commenting
 002 Terms/Definitions
 003 Basic Commands
 004 Numbers
@@ -14,6 +15,8 @@ Ruby Notes
 008 Symbol
   008.1 HashSymbol Notation
 009 The 4 Variable Types
+0010
+0012 Conditional
 
 ===================
 Basic Notes 001
@@ -27,6 +30,7 @@ http://apidock.com
 http://apidock.com
 http://apidock.com
 
+
 Variables must start with a letter no numbers or special characters
 no spaces can only use _ underscores
 ------------------------------
@@ -39,6 +43,20 @@ Puts "name" - cout/print/ displays "name"
 
 auto declaration = good but also bad imo
 
+-----------
+Commenting
+-----------
+# anything on this line will be a comment and it will not be counted
+
+=begin
+  anything in between these 2 will be commented
+  but the =begin and =end must be against the left wall
+=end
+
+ =begin
+    wrong
+  =end
+----------------
 
 =======================
 Terms/Definitions 002
@@ -186,7 +204,7 @@ end
 
 
 =================
-Hash Variable 008
+Hash Variable 007
 =================
 you can name each point/index in the hash but they must be unique
 
@@ -204,7 +222,7 @@ doge { "cat1" => 1, "cat2" => 2,
 
 
 -----------------
-Looping Hashes 008.1
+Looping Hashes 007.1
 -----------------
 doge.each_key do |key| or doge.each_value do |value|
     puts "the key is #{key} and the value is #{value}"
@@ -224,7 +242,7 @@ end
 ----------------
 
 ===================
-Symbol :name   009
+Symbol :name   008
 ===================
 
 Mainly used in hashes
@@ -248,7 +266,7 @@ sex now equals male
     ^^^^^ "-" doesn't work in symbols
 
 =======================
-The 4 Variable Types 010
+The 4 Variable Types 09
 =======================
 
 local_variable = "Hello"
@@ -258,7 +276,6 @@ local_variable = "Hello"
 @@class_vairable = "Human"
 
 $global_variable = "DO NOT USE"
-
 
 
       $global_variable
@@ -278,3 +295,136 @@ $global_variable = "DO NOT USE"
 |    | -------------------|   |
 |                             |
 |-----------------------------|
+
+
+=======================
+Boolean And Comparison 10
+=======================
+true = true
+false = false
+nil = false
+false and nil are the only things that aquate to false if not then it is true
+
+== - "dog" == "dog" true, "Dog" == "dog" false
+!= - "cat" != "dog" true, "cat" != "cat" false
+> - 6 > 3 = true, 3 > 6 = false
+< - 8 < 4 = false, 4 < 8 = true
+>= - 4 >= 4 = true, 4 >= 7 = false, 4 >= 2 = true
+<= - 4 <= 4 = true, 4 <= 7 = true, 4 <= 2 = false
+
+|| / or - one of the comparisons has to be true for it to return a value of true
+&& / and - both of the comparisons have to be true/corecct for it to return a value of true
+
+-------------------
+Example:
+or
+  1 + 1 = 2 or 2 + 2 = 4,  1 + 1 = 2 || 2 + 2 = 4
+and
+  1 + 1 = 2 and 2 + 2 = 4,  1 + 1 = 2 && 2 + 2 = 4
+---------------------------------------------------
+
+
+=======================
+If Elsif Unless 011
+=======================
+if some_condition
+  do_stuff
+end
+
+if happy == true
+  puts "yay"
+end
+
+if happy != true
+  puts "sad"
+else
+  puts "yay"
+end
+
+  unless happy == false
+      "sad"
+  else
+    "yay"
+
+puts "Im happy" unless happy == false
+
+puts "Im Happy" if sad != true
+
+
+
+----------------
+elsif 11.1
+----------------
+if your_grade > 90
+    puts "You get an A"
+
+  elsif your_grade >= 80 && your_grade < 90
+    puts "You get a B"
+
+  elsif your_grade >= 70 && your_grade < 80
+    puts "You get a C"
+
+  elsif your_grade >= 60 && your_grade < 70
+    puts "You get a D and you need to study more"
+
+  else
+    puts "You Fail"
+end
+------------------------------------------------
+----------------
+Case Statement 11.2
+----------------
+case grade
+  when 'A'
+    puts "YAY Good Job"
+  when 'B'
+    puts "Not Too Shabby"
+  when 'C'
+    puts "might want to put some time into that"
+  when 'D'
+    puts "not doing too well"
+  when 'F'
+    puts "ok, you failed"
+  else
+    puts "don't know how you managed to get #{grade}"
+end
+-------------------------------------------------
+
+
+
+
+=======================
+Loops 012
+=======================
+
+while x < 10
+x + 1
+
+                                              prints
+            is x > 10?                           0
+x=0  ________         ___________ end            1
+             \       / <-yes                     2
+              \__>__/                            3
+              /      \                           4
+             /   no-> \                          5
+     x + 1   |        |                          6
+             ^        V                          7
+             |        |                          8
+              \___<__/                           9
+                puts "x"                        10
+
+          loop runs 10 times
+
+
+while nemo_is_still_lost
+
+  puts "just keep swimming"
+
+end
+
+do loop
+
+    puts "just keep swimming"
+
+  break if nemo_is_found
+end
