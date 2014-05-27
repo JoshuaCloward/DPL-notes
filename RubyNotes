@@ -30,7 +30,6 @@ http://apidock.com
 http://apidock.com
 http://apidock.com
 
-
 Variables must start with a letter no numbers or special characters
 no spaces can only use _ underscores
 ------------------------------
@@ -119,15 +118,14 @@ Strings 005
 .capitalize - capitalizes first word/letter
 .length - returns the length of the string
 .to_s - changes current data type to a string
-
 .chop - returns value with last character removed
 .succ - returns the next possible letter/number example: "zzz999".succ = "aaa000"
 .replace "name" - replaces the values in the current string with name
 .delete "n", "a" - removes n and a from the current string
 
------------------------
+---------------------------
 String Interpolation 005.1
------------------------
+---------------------------
 #{name}
 #{1+1} - prints name or any valid ruby code
 
@@ -269,7 +267,7 @@ sex now equals male
 
 
 =======================
-The 4 Variable Types 09
+The 4 Variable Types 009
 =======================
 
 local_variable = "Hello"
@@ -301,7 +299,7 @@ $global_variable = "DO NOT USE"
 
 
 =======================
-Boolean And Comparison 10
+Boolean And Comparison 010
 =======================
 true = true
 false = false
@@ -376,6 +374,9 @@ end
 ----------------
 Case Statement 11.2
 ----------------
+used to replace if/else when you would normally have more then 3 eslifs
+can replace 'A' with variable or number
+
 case grade
   when 'A'
     puts "YAY Good Job"
@@ -411,7 +412,7 @@ x=0  ________         ___________ end            1
              ^        V                          7
              |        |                          8
               \___<__/                           9
-                puts "x"                        10
+              puts "x"                          10
 
           loop runs 10 times
 
@@ -422,9 +423,235 @@ while nemo_is_still_lost
 
 end
 
+
+
 do loop
 
     puts "just keep swimming"
 
   break if nemo_is_found
 end
+
+
+=======================
+Methods? 013
+=======================
+method - a way to name a set of instructions
+parameter/arguement - passing a local variable into a method
+
+def method_name()
+
+end
+
+method_name()
+
+---------------------
+with Arguement
+----------------------
+def grab_food(food)
+  puts "grabbing some food"
+  puts food
+end
+
+grab_food("sushi")
+---------------------------
+with multiple Arguements
+---------------------------
+def grab_food(food, drink)
+  puts "grabbing some #{food}"
+  puts "drinking some #{drink}"
+end
+
+grab_food("sushi","sake")
+-----------------------------
+====================
+Classes 014
+====================
+Cannot begin with numbers
+Class's have to begin with capital letter
+Constant is opposite of variable
+Constants cannot change
+Constants begin with capitol letter
+Instantiation - to create a new instance of an object
+
+
+class ClassName
+
+end
+
+constant
+PI = 3.14
+
+class Animal
+  def play
+  end
+  def run
+  end
+  def sleep
+  end
+end
+----------------------
+Derived Class 014.1
+----------------------
+class Human < Animal
+  def play_computer_games
+
+  end
+end
+-------------
+Attr
+-------------
+shorthand to creating methods for you?
+attr_writer - assign a value to one of the attributes / assign value
+attr_read - allows retrieval of attributes / return value
+attr_accessor - basically attr_writer and attr_reader / assign and return
+
+class Chair
+  att_writer :color, :size, :weight
+  attr_reader :color, :size, :weight
+  attr_accessor :color, :size, :weight
+end
+
+---------------
+Without Attr
+---------------
+class Chair
+  # Reader method
+  def color
+    @color
+  end
+  # Writer method
+  def color=(new_color)
+    @color = new_color
+  end
+end
+----------------
+With Attr
+-----------------------
+class Chair
+  attr_accessor :color, :size, :weight
+end
+----------------------------------------
+Instantiation
+----------------------------------------
+Instantiation - to create a new instance of an object
+
+class Animal
+  def eat
+    puts "eating food"
+  end
+end
+cat = Animal.new
+cat.eat
+
+This method gets called every time we call
+.new on a class
+def initialize
+
+end
+-------------------------------
+ Instance Methods
+-------------------------------
+can only be called on an instance of String class not THE String class
+for example length is a instance method not a class method
+class String
+  def reverse
+  end
+  def length
+  end
+end
+-------------------------------
+Preticate Method
+This method here is asking a Question
+will return true or false
+
+  def old_enough?
+
+  end
+
+Destructive Method
+def die!
+  #Destructive Method
+end
+def name = (new_name)
+  #Writer Method
+end
+def old_enough_to_vote?
+  #Preticate/Boolean Method
+end
+def age
+  #Reader Method
+end
+
+
+----------------------
+ Class Methods
+----------------------
+self referenses Human, self = current object i am in
+can only be called by class
+person = Human.new, person.evolve doesn't work
+         only Human.evolve or self.evolve
+last evalutated variable/instance is what gets returned
+would self return variable name? or variable type or value
+if self doesn't have a value what does it return? blank?
+
+
+  class Human
+    def self.evolve
+    end
+
+end
+
+common use
+
+class Human
+
+def self.class_name
+  puts name
+end
+
+def self.create_boy
+  baby = new / Human.new / self.new
+  baby.sex = "Male"
+  baby
+end
+
+def self.create_girl
+  baby = new
+  baby.sex = "female"
+  baby
+end
+
+
+
+
+ class Human
+/////// WITH ATTR \\\\\\\
+    attr_accessor :hair_color, :eye_color, :number_of_fingers,
+          :number_of_toes, :heart_rate, :skin_color, :sex, :name
+\\\\\\ WITH ATTR ////////
+
+    def initialize
+      @hair_color = "black"
+      @eye_color = "green"
+      @number_of_fingers = "10"
+      @number_of_toes = "10"
+      @heart_rate = "150bpm"
+      @skin_color = "pale and goey"
+      @sex = "female"
+    end
+////// WITHOUT ATTR \\\\\\\
+    # Reader Method
+    def skin_color
+      @skin_color
+    end
+    # Writer Method
+    def skin_color=(new_skin_color)
+      @skin_color = new_skin_color
+    end
+\\\\\\ WITHOUT ATTR /////
+end
+
+
+
+how do i move this line up without copy/paste
