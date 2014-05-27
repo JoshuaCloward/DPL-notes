@@ -58,6 +58,7 @@ Commenting
   =end
 ----------------
 
+
 =======================
 Terms/Definitions 002
 =======================
@@ -67,7 +68,6 @@ interation - one at a time
 ===================
 Basic Commands 003
 ===================
-
 .class - returns data type
 puts "name" - cout/print/ displays "name"
 gets - takes an input from the user + end line /caridge return
@@ -95,6 +95,8 @@ puts josh - prints josh
 puts josh.reverse! - prints hsoj
 puts josh - prints hsoj
 ------------------------------
+
+
 ====================
 Numbers 004
 ====================
@@ -202,7 +204,6 @@ puts dog - returns each part of that array one at a time
 end
 
 
-
 =================
 Hash Variable 007
 =================
@@ -241,6 +242,7 @@ doge.each_pair do |key, value|
 end
 ----------------
 
+
 ===================
 Symbol :name   008
 ===================
@@ -264,6 +266,7 @@ sex now equals male
 {'data-url' => 'http://www.google.com'}
 {:data-url => 'http://www.google.com'}
     ^^^^^ "-" doesn't work in symbols
+
 
 =======================
 The 4 Variable Types 09
@@ -350,8 +353,6 @@ puts "Im happy" unless happy == false
 
 puts "Im Happy" if sad != true
 
-
-
 ----------------
 elsif 11.1
 ----------------
@@ -371,6 +372,7 @@ if your_grade > 90
     puts "You Fail"
 end
 ------------------------------------------------
+
 ----------------
 Case Statement 11.2
 ----------------
@@ -389,8 +391,6 @@ case grade
     puts "don't know how you managed to get #{grade}"
 end
 -------------------------------------------------
-
-
 
 
 =======================
