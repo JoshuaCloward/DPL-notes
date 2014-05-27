@@ -1,10 +1,7 @@
 Ruby Notes
 
 001 Basic Notes
-<<<<<<< HEAD
-=======
   001.1 Commenting
->>>>>>> sample
 002 Terms/Definitions
 003 Basic Commands
 004 Numbers
@@ -18,11 +15,8 @@ Ruby Notes
 008 Symbol
   008.1 HashSymbol Notation
 009 The 4 Variable Types
-<<<<<<< HEAD
-=======
 0010
 0012 Conditional
->>>>>>> sample
 
 ===================
 Basic Notes 001
@@ -36,10 +30,7 @@ http://apidock.com
 http://apidock.com
 http://apidock.com
 
-<<<<<<< HEAD
-=======
 
->>>>>>> sample
 Variables must start with a letter no numbers or special characters
 no spaces can only use _ underscores
 ------------------------------
@@ -66,11 +57,6 @@ Commenting
     wrong
   =end
 ----------------
-
-=======================
-Terms/Definitions 002
-=======================
-interation - one at a time
 
 =======================
 Terms/Definitions 002
@@ -136,7 +122,6 @@ Strings 005
 .succ - returns the next possible letter/number example: "zzz999".succ = "aaa000"
 .replace "name" - replaces the values in the current string with name
 .delete "n", "a" - removes n and a from the current string
-<<<<<<< HEAD
 
 -----------------------
 String Interpolation 005.1
@@ -151,22 +136,6 @@ NOTICE: String Interpolation does not worth with single quotes ''
         String Interpolation only works with double quotes ""
 -------------------------------------------------------------------
 
-=======
-
------------------------
-String Interpolation 005.1
------------------------
-#{name}
-#{1+1} - prints name or any valid ruby code
-
-\' - prints single quote '
-\n - returns to a new line
-\t - tabs
-NOTICE: String Interpolation does not worth with single quotes ''
-        String Interpolation only works with double quotes ""
--------------------------------------------------------------------
-
->>>>>>> sample
 ---------------------------
 Method Chaining / example 005.2
 ------------------------------------
@@ -235,11 +204,7 @@ end
 
 
 =================
-<<<<<<< HEAD
-Hash Variable 008
-=======
 Hash Variable 007
->>>>>>> sample
 =================
 you can name each point/index in the hash but they must be unique
 
@@ -257,11 +222,7 @@ doge { "cat1" => 1, "cat2" => 2,
 
 
 -----------------
-<<<<<<< HEAD
-Looping Hashes 008.1
-=======
 Looping Hashes 007.1
->>>>>>> sample
 -----------------
 doge.each_key do |key| or doge.each_value do |value|
     puts "the key is #{key} and the value is #{value}"
@@ -281,11 +242,7 @@ end
 ----------------
 
 ===================
-<<<<<<< HEAD
-Symbol :name   009
-=======
 Symbol :name   008
->>>>>>> sample
 ===================
 
 Mainly used in hashes
@@ -309,11 +266,7 @@ sex now equals male
     ^^^^^ "-" doesn't work in symbols
 
 =======================
-<<<<<<< HEAD
-The 4 Variable Types 010
-=======
 The 4 Variable Types 09
->>>>>>> sample
 =======================
 
 local_variable = "Hello"
@@ -325,10 +278,6 @@ local_variable = "Hello"
 $global_variable = "DO NOT USE"
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> sample
       $global_variable
 |-----------------------------|
 |     @@class_variable        |
@@ -348,11 +297,6 @@ $global_variable = "DO NOT USE"
 |-----------------------------|
 
 
-<<<<<<< HEAD
-==============
-if statements
-==============
-=======
 =======================
 Boolean And Comparison 10
 =======================
@@ -478,10 +422,9 @@ while nemo_is_still_lost
 
 end
 
-loop do
+do loop
 
     puts "just keep swimming"
 
   break if nemo_is_found
 end
->>>>>>> sample
