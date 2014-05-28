@@ -19,6 +19,7 @@ Ruby Notes
 011 If Elsif Unless
   011.1 Elsif
   011.2 Case Statement
+  011.3 Ternary Operator
 012 Loops
 013 Methods
   013.1 Def Method Types
@@ -380,8 +381,6 @@ if your_grade > 90
   else
     puts "You Fail"
 end
-------------------------------------------------
-
 ----------------
 Case Statement 11.2
 ----------------
@@ -402,8 +401,21 @@ case grade
   else
     puts "don't know how you managed to get #{grade}"
 end
--------------------------------------------------
 
+---------------------
+Ternary Operator 11.3
+---------------------
+shorthand if statement
+
+result = x < y ? "YEAH!" : "Nope"
+
+if x < y
+  puts "YEAH!"
+else
+  "Nope"
+end
+
+-----------------------------
 
 =======================
 Loops 012
@@ -669,18 +681,3 @@ class Human
 \\\\\\ WITHOUT ATTR /////
 end
 -----------------------------------------------------------------------------
-
----------------------
-Ternary Operator
----------------------
-shorthand if statement
-
-result = x < y ? "YEAH!" : "Nope"
-
-if x < y
-  puts "YEAH!"
-else
-  "Nope"
-end
-
------------------------------
