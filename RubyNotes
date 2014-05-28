@@ -14,9 +14,20 @@ Ruby Notes
   007.1 Looping Hashs
 008 Symbol
   008.1 HashSymbol Notation
-009 The 4 Variable Types
-0010
-0012 Conditional
+009 Scope / The 4 Variable Types
+010 Boolean And Comparison
+011 If Elsif Unless
+  011.1 Elsif
+  011.2 Case Statement
+012 Loops
+013 Methods
+  013.1 Def Method Types
+  013.2 Instance Methods
+014 Classes
+  014.1 Derived Class
+  014.2 Instantiation
+015 Classes Continued - Attr
+  015.1 Class Methods
 
 ===================
 Basic Notes 001
@@ -352,7 +363,7 @@ puts "Im happy" unless happy == false
 puts "Im Happy" if sad != true
 
 ----------------
-elsif 11.1
+Elsif 11.1
 ----------------
 if your_grade > 90
     puts "You get an A"
@@ -434,7 +445,7 @@ end
 
 
 =======================
-Methods? 013
+Methods 013
 =======================
 method - a way to name a set of instructions
 parameter/arguement - passing a local variable into a method
@@ -464,6 +475,44 @@ end
 
 grab_food("sushi","sake")
 -----------------------------
+
+-----------------------
+Def Method Types 013.1
+------------------------------
+This method here is asking a Question
+will return true or false
+
+  def old_enough?
+
+  end
+
+Destructive Method
+def die!
+  #Destructive Method
+end
+def name = (new_name)
+  #Writer Method
+end
+def old_enough_to_vote?
+  #Preticate/Boolean Method
+end
+def age
+  #Reader Method
+end
+---------------------------------------
+
+-------------------------------
+ Instance Methods 013.2
+-------------------------------
+can only be called on an instance of String class not THE String class
+for example length is a instance method not a class method
+class String
+  def reverse
+  end
+  def length
+  end
+end
+
 ====================
 Classes 014
 ====================
@@ -498,41 +547,9 @@ class Human < Animal
 
   end
 end
--------------
-Attr
--------------
-shorthand to creating methods for you?
-attr_writer - assign a value to one of the attributes / assign value
-attr_read - allows retrieval of attributes / return value
-attr_accessor - basically attr_writer and attr_reader / assign and return
 
-class Chair
-  att_writer :color, :size, :weight
-  attr_reader :color, :size, :weight
-  attr_accessor :color, :size, :weight
-end
-
----------------
-Without Attr
----------------
-class Chair
-  # Reader method
-  def color
-    @color
-  end
-  # Writer method
-  def color=(new_color)
-    @color = new_color
-  end
-end
-----------------
-With Attr
------------------------
-class Chair
-  attr_accessor :color, :size, :weight
-end
 ----------------------------------------
-Instantiation
+Instantiation 014.2
 ----------------------------------------
 Instantiation - to create a new instance of an object
 
@@ -549,43 +566,43 @@ This method gets called every time we call
 def initialize
 
 end
--------------------------------
- Instance Methods
--------------------------------
-can only be called on an instance of String class not THE String class
-for example length is a instance method not a class method
-class String
-  def reverse
+
+============================
+Class Continued - Attr 015
+============================
+shorthand to creating methods for you?
+attr_writer - assign a value to one of the attributes / assign value
+attr_read - allows retrieval of attributes / return value
+attr_accessor - basically attr_writer and attr_reader / assign and return
+
+class Chair
+  att_writer :color, :size, :weight
+  attr_reader :color, :size, :weight
+  attr_accessor :color, :size, :weight
+end
+
+---------------
+Without Attr
+
+class Chair
+  # Reader method
+  def color
+    @color
   end
-  def length
+  # Writer method
+  def color=(new_color)
+    @color = new_color
   end
 end
--------------------------------
-Preticate Method
-This method here is asking a Question
-will return true or false
+----------------
+With Attr
 
-  def old_enough?
-
-  end
-
-Destructive Method
-def die!
-  #Destructive Method
+class Chair
+  attr_accessor :color, :size, :weight
 end
-def name = (new_name)
-  #Writer Method
-end
-def old_enough_to_vote?
-  #Preticate/Boolean Method
-end
-def age
-  #Reader Method
-end
-
 
 ----------------------
- Class Methods
+ Class Methods 015.1
 ----------------------
 self referenses Human, self = current object i am in
 can only be called by class
@@ -622,10 +639,10 @@ def self.create_girl
   baby
 end
 
+-----------------------------------------------------------------------------
+Example:
 
-
-
- class Human
+class Human
 /////// WITH ATTR \\\\\\\
     attr_accessor :hair_color, :eye_color, :number_of_fingers,
           :number_of_toes, :heart_rate, :skin_color, :sex, :name
@@ -651,7 +668,19 @@ end
     end
 \\\\\\ WITHOUT ATTR /////
 end
+-----------------------------------------------------------------------------
 
+---------------------
+Ternary Operator
+---------------------
+shorthand if statement
 
+result = x < y ? "YEAH!" : "Nope"
 
-how do i move this line up without copy/paste
+if x < y
+  puts "YEAH!"
+else
+  "Nope"
+end
+
+-----------------------------
