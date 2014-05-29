@@ -29,7 +29,9 @@ Ruby Notes
   014.2 Instantiation
 015 Classes Continued - Attr
   015.1 Class Methods
-
+016
+  016.1
+017 Modules
 ===================
 Basic Notes 001
 ===================
@@ -681,3 +683,117 @@ class Human
 \\\\\\ WITHOUT ATTR /////
 end
 -----------------------------------------------------------------------------
+
+
+
+
+
+
+
+//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+===============
+File Linking 016
+===============
+
+require 'name' #of file
+if it works result of statement will be true
+
+will return false if already acquired
+
+requires load path which is essential a array of strings
+directory listing of all the files located
+
+require '/Users/joshua/Desktop/projects/ruby_stuff/require_ractice/first'
+    or
+require_relative 'first'
+relative to the current files location there should be another file by this name
+
+adding into rubys default library
+
+$LOAD_PATH '/Users/joshua/Desktop/projects/ruby_stuff/require_ractice/first'
+
+only stores during the life of your application
+
+------------------------------
+Ruby's Built In Methods 016.1
+----------------------------------
+net/http -
+open-uri -
+date - has many methods concerning dates
+google -
+----------------------------------------------
+
+==========================
+Modules 017
+==========================
+Modules are constants
+
+module Transportation
+  def going_forward
+    puts "going forward"
+  end
+end
+
+either include modules or extend modules
+
+include - methods become instance methods
+extend - methods become class methods
+---------------------------------------
+Example:
+class car
+  include Transportation
+end
+  c = car.new
+  c.going_forward
+--------------------------
+class car
+  extend Transportation
+end
+  Car.going_forward
+----------------------------------------
+
+Persistance a way to store your data so you can retreive it later
+you can choose how to store your data in any format
+
+
+
+
+
+
+
+
+
+
+
+
+
+      _ _ _ _ _ _
+     /           \
+    |            \
+   /              \
+  /                 |
+ |                 /
+/                 /
+| _ _ _ _ _ _ _ /
+
+
+
+
+         - - - - - - -
+ / / / / ---- ---- ---\ \ \ \
+| | | | ----- / \ -----| | | |
+| | | | ----- \_/ -----| | | |
+ \ \ \ \ ------  -----/ / / /
+         - - - - - - -
+
+
+
+
+       _______
+     /       /
+    |       |
+   /       /
+  /       /
+ |        |_ _ _ _ _ _
+/                    /
+|_ _ _ _ _ _ _ _ _ _ /
