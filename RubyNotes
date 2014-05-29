@@ -32,6 +32,8 @@ Ruby Notes
 016
   016.1
 017 Modules
+018 System Commands and Manipulating Files
+019 Modes for Writing/Reading to Files
 ===================
 Basic Notes 001
 ===================
@@ -752,9 +754,110 @@ end
   Car.going_forward
 ----------------------------------------
 
+
+
+========================================
+System Commands \ Manipulating Files 018
+========================================
 Persistance a way to store your data so you can retreive it later
 you can choose how to store your data in any format
 
+system("ls")
+backticks work as a shortcut to system command - `pwd` `ls`
+
+File.exists("car.rb") - returns boolean true or false
+Dir.exists?("RubyStuff") - returns boolean true or false
+
+File.basename("#{Dir.pwd}/car.rb") - returns path to car.rb
+File.extname("logo.jpg") - returns ".jpg"
+File.dirname("car.rb") - returns "." take the file you have and return the current directy and the dot symbolizes
+                                     I am in the current directory that this file is located
+filepath = File.join("/", "Users", "jeremy", "Desktop")
+Dir.chdir(filepath)
+
+new_file = File.new("first_file.txt","w+")
+                          |            |_ _ _ _ _ _ File Mode
+                          |_ _ _ _ Name of file you wish to make
+
+new_file.write("hello") - writes hello to the file
+
+new_file.close - closes the file
+
+/ \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \
+
+YOU MUST CLOSE ALL FILES AFTER DONE USING OR ELSE MEMORY LEAKS AND OTHER BAD PROBLEMTS
+
+\ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ /
+
+new_file = File.open("first_file.txt", "r") - opens new_file
+
+new_file.read - read file
+new_file.eof? - end of file returns boolean
+
+Dir.pwd - shows your file location in the computer returns it as a string
+Dir.glob("*.rb") gather up all the files in the current directory that end in .rb
+
+new_file.readlines - puts all the file lines into an array each line going into a corrosponding spot in te array
+
+YAML - Yaml aint mark-up language
+plain text file that has a specific structure to how you format your text
+
+require 'yaml' - must require yaml in order to use yaml
+
+contacts:  . . . . . . . . . . hash1 - Key1
+ . . . . . . . . . . . . . . . hash1 - info1
+                              {
+  -  . . . . . . . . . . . . . Array Spot 1
+    name: Josh . . . . . . . . hash2 - key1, info1
+    hobby: Glow Sticking . . . hash2 - key2, info2
+  -  . . . . . . . . . . . . . Array Spot 2
+    name: Ty
+    hobby: jui-jitzu
+  -
+    name: Will
+    hobby: Poker
+  -
+    name: Jason
+    hobby: Pole Dancing
+                                }
+
+
+
+======================================
+Modes for Writing/Reading to File 019
+======================================
+
+Mode |  Meaning
+-----+--------------------------------------------------------
+"r"  |  Read-only, starts at beginning of file  (default mode).
+-----+--------------------------------------------------------
+"r+" |  Read-write, starts at beginning of file.
+-----+--------------------------------------------------------
+"w"  |  Write-only, truncates existing file
+     |  to zero length or creates a new file for writing.
+-----+--------------------------------------------------------
+"w+" |  Read-write, truncates existing file to zero length
+     |  or creates a new file for reading and writing.
+-----+--------------------------------------------------------
+"a"  |  Write-only, starts at end of file if file exists,
+     |  otherwise creates a new file for writing.
+-----+--------------------------------------------------------
+"a+" |  Read-write, starts at end of file if file exists,
+     |  otherwise creates a new file for reading and
+     |  writing.
+-----+--------------------------------------------------------
+ "b" |  Binary file mode (may appear with
+     |  any of the key letters listed above).
+     |  Suppresses EOL <-> CRLF conversion on Windows. And
+     |  sets external encoding to ASCII-8BIT unless explicitly
+     |  specified.
+-----+--------------------------------------------------------
+ "t" |  Text file mode (may appear with
+     |  any of the key letters listed above except "b").
+
+===============
+Gems
+===============
 
 
 
@@ -765,16 +868,49 @@ you can choose how to store your data in any format
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   _ _ _ _ _ _             _ _ _ _ _ _
+    \          \          /          /
+     \          \        /          /
+      \          \      /          /
+       \          \    /          /
+        \          \  /          /
+         \          \/          /
+          \                    /
+           \                  /
+            \                /
+            /                \
+           /                  \
+          /                    \
+         /         /\           \
+        /         /  \           \
+       /         /    \           \
+      /         /      \           \
+     /         /        \           \
+    /         /          \           \
+    - - - - -             - - - - - - -
 
 
       _ _ _ _ _ _
      /           \
-    |            \
-   /              \
+    |             \
+   /                \
   /                 |
  |                 /
 /                 /
-| _ _ _ _ _ _ _ /
+| _ _ _ _ _ _ _ -/
 
 
 
