@@ -33,7 +33,10 @@ Ruby Notes
   016.1
 017 Modules
 018 System Commands and Manipulating Files
-019 Modes for Writing/Reading to Files
+  018.1 Modes for Writing/Reading to File
+019 Errors/Debugging
+  019.1
+  019.2
 ===================
 Basic Notes 001
 ===================
@@ -692,7 +695,7 @@ end
 
 
 
-//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 ===============
 File Linking 016
 ===============
@@ -822,10 +825,9 @@ contacts:  . . . . . . . . . . hash1 - Key1
                                 }
 
 
-
-======================================
-Modes for Writing/Reading to File 019
-======================================
+--------------------------------------------
+Modes for Writing/Reading to File 018.1
+--------------------------------------------
 
 Mode |  Meaning
 -----+--------------------------------------------------------
@@ -855,9 +857,131 @@ Mode |  Meaning
  "t" |  Text file mode (may appear with
      |  any of the key letters listed above except "b").
 
-===============
-Gems
-===============
+======================
+Gems amd Frameworks
+======================
+
+pry - debugging gem, beefed up version of irb with debugging, terminal like syntax
+Chef - Multi-server managment
+Shoes - Cross Platform Manager
+Highline- Rubygem for terminal based applications
+Gosu - 2d Video Game Development in Ruby
+Waves - 3d Video game Development
+
+-----------------------
+Pry
+irb debugger
+binding.pry
+ls - lists out all the methods
+cd - cd into a particular object / class
+-----------------------
+
+=====================
+Errors / Debugging 19
+=====================
+
+
+~~~~~~~~~~~~~ Original Error ~~~~~~~~~~~~~~~~~
+
+debugging.rb:8:in 'say': wrong number of arguements
+(0 for 1) (ArguementError)
+        from debugging.rb:16:in '<main>'
+
+
+
+~~~~~~~~~~~~ Labeled Error ~~~~~~~~~~~~~~~~~~~~
+                            Description
+            line    method?     |
+             |      |           |
+             v      v           v
+debugging.rb:8:in 'say': wrong number of arguements
+(0 for 1) (ArguementError) < - - - - - - - - - - - - - - Error Class
+        from debugging.rb:16:in '<main>' < - - - - Error Location
+
+
+~~~~~~~~~~~~~~~ Error with Comments/Lables ~~~~~~~~~~~~~~~~~~
+
+                        Description of Error
+                                |
+                                |
+                                v
+debugging.rb:19:in `/':   divided by 0   (ZeroDivisionError) < - - - - - What Class the Error is apart of
+              ^
+              |_ _ _ _ _ _ What Line the Error Occured on
+                     |
+                     v
+	from debugging.rb:19:in `<main>' < - - - - - Error Occured in main
+
+---------------------
+Types of Errors 019.1
+----------------------
+
+ArguementError -
+didn't pass in an arguement into my say method
+debugging.rb:8:in 'say': wrong number of arguements
+(0 for 1) (ArguementError)
+        from debugging.rb:16:in '<main>'
+
+NameError -
+Entered name wrong Geeter = Greeter
+debugging.rb:15:in `<main>': uninitialized constant Geeter (NameError)
+
+Entered gets wrong
+debugging.rb:16:in `<main>': undefined local variable or method `gts' for main:Object (NameError)
+
+----------------------
+Begin/Raise 019.2
+----------------------
+begin  -- - --- -
+|    10/0        | - - - -- if anywhere in here fails it will do rescue or this
+- -- - - - - - - -                                                          |
+rescue                                                                      |
+  "there was an error"  -  -  -  -  -  - - - - - - - - - - - - - - - - - - -
+
+
+begin
+    10 / 0
+rescue ZeroDivisionError - you can specify what you want the being/rescue to look for in this case ZeroDivisionError
+    "You divided by zero"
+
+
+or
+                                                              debugging.rb:8:in 'say': wrong number of arguements
+                                                              (0 for 1) (ArguementError)
+                                                                      from debugging.rb:16:in '<main>'
+                                                                                  ^
+begin                                                                             |
+  g = Greeter.new("Jeremy")                                                       |
+  puts g.say                                                                 e = -| - - but a little bit simpler
+rescue  ArguementError => e  = original error message, now the original error message is accepted as a string so you input the name of the string you want the error message to be in
+  puts "You are missing an arguement"  -  -  -  -  -
+                                                    | -  - now you can print both the original error message and a custom message to inform the user or you exactly what you could want
+  puts error  -  -  -  -  -  -  -  -  -  -  -  -  -
+rescue ZeroDivisionError
+  puts "You are trying to divide by 0. stop.. "
+end
+
+
+x = 1
+raise "x = 1 The application got to this point"
+  "x = 1"
+              ^
+              |
+              |
+              |
+              v
+/////////////////////////////////////////////////////////////////////////////////
+
+      prints this if x = 1
+debugging.rb:36:in `<main>': x = 1 application got to this point (RuntimeError)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 
@@ -865,41 +989,15 @@ Gems
 
 
 
-
-
-
-
-
-
-
-
-        /
-      /   _ _   \
-     /   /_ _|   |
-    /     _ _ _ /
+        _ _ _ _ _
+       /         \
+      /    / \    |
+     /    / _/    |
+    /      _ _ _ /
    /        \
   /    / \   \
  /    /   \   \
 /_ _ /     \_ _\
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
    _ _ _ _ _ _             _ _ _ _ _ _
