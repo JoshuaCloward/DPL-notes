@@ -77,15 +77,15 @@ Commenting
 ----------------
 
 
-=======================
+=========================
 Terms/Definitions 002
-=======================
+=========================
 interation - one at a time
 
 
-===================
+=====================
 Basic Commands 003
-===================
+=====================
 .class - returns data type
 puts "name" - cout/print/ displays "name"
 gets - takes an input from the user + end line /caridge return
@@ -221,9 +221,9 @@ puts dog - returns each part of that array one at a time
 end
 
 
-=================
+===================
 Hash Variable 007
-=================
+===================
 you can name each point/index in the hash but they must be unique
 
 0       1      2       3
@@ -239,9 +239,9 @@ doge { "cat1" => 1, "cat2" => 2,
 }
 
 
------------------
+----------------------
 Looping Hashes 007.1
------------------
+----------------------
 doge.each_key do |key| or doge.each_value do |value|
     puts "the key is #{key} and the value is #{value}"
     or
@@ -260,9 +260,9 @@ end
 ----------------
 
 
-===================
+====================
 Symbol :name   008
-===================
+====================
 
 Mainly used in hashes
 very similar to a string
@@ -285,9 +285,9 @@ sex now equals male
     ^^^^^ "-" doesn't work in symbols
 
 
-=======================
+==========================
 The 4 Variable Types 009
-=======================
+==========================
 
 local_variable = "Hello"
 
@@ -317,9 +317,9 @@ $global_variable = "DO NOT USE"
 |-----------------------------|
 
 
-=======================
+============================
 Boolean And Comparison 010
-=======================
+============================
 true = true
 false = false
 nil = false
@@ -388,9 +388,9 @@ if your_grade > 90
   else
     puts "You Fail"
 end
-----------------
+---------------------
 Case Statement 11.2
-----------------
+---------------------
 used to replace if/else when you would normally have more then 3 eslifs
 can replace 'A' with variable or number
 
@@ -409,9 +409,9 @@ case grade
     puts "don't know how you managed to get #{grade}"
 end
 
----------------------
+-----------------------
 Ternary Operator 11.3
----------------------
+-----------------------
 shorthand if statement
 
 result = x < y ? "YEAH!" : "Nope"
@@ -463,9 +463,9 @@ do loop
 end
 
 
-=======================
+=================
 Methods 013
-=======================
+=================
 method - a way to name a set of instructions
 parameter/arguement - passing a local variable into a method
 
@@ -586,9 +586,9 @@ def initialize
 
 end
 
-============================
+=============================
 Class Continued - Attr 015
-============================
+=============================
 shorthand to creating methods for you?
 attr_writer - assign a value to one of the attributes / assign value
 attr_read - allows retrieval of attributes / return value
@@ -620,9 +620,9 @@ class Chair
   attr_accessor :color, :size, :weight
 end
 
-----------------------
+-----------------------
  Class Methods 015.1
-----------------------
+-----------------------
 self referenses Human, self = current object i am in
 can only be called by class
 person = Human.new, person.evolve doesn't work
@@ -689,9 +689,9 @@ class Human
 end
 -----------------------------------------------------------------------------
 
-===============
+==================
 File Linking 016
-===============
+==================
 
 require 'name' #of file
 if it works result of statement will be true
@@ -721,9 +721,9 @@ date - has many methods concerning dates
 google -
 ----------------------------------------------
 
-==========================
+===============
 Modules 017
-==========================
+===============
 Modules are constants
 
 module Transportation
@@ -752,9 +752,9 @@ end
 
 
 
-========================================
+===========================================
 System Commands \ Manipulating Files 018
-========================================
+===========================================
 Persistance a way to store your data so you can retreive it later
 you can choose how to store your data in any format
 
@@ -869,9 +869,9 @@ ls - lists out all the methods
 cd - cd into a particular object / class
 -----------------------
 
-=====================
+=======================
 Errors / Debugging 19
-=====================
+=======================
 
 
 ~~~~~~~~~~~~~ Original Error ~~~~~~~~~~~~~~~~~
@@ -905,9 +905,9 @@ debugging.rb:19:in `/':   divided by 0   (ZeroDivisionError) < - - - - - What Cl
                      v
 	from debugging.rb:19:in `<main>' < - - - - - Error Occured in main
 
----------------------
-Types of Errors 019.1
 ----------------------
+Types of Errors 019.1
+------------------------
 
 ArguementError -
 didn't pass in an arguement into my say method
@@ -924,7 +924,7 @@ debugging.rb:16:in `<main>': undefined local variable or method `gts' for main:O
 
 ----------------------
 Begin/Raise 019.2
-----------------------
+------------------------
 begin  -- - --- -
 |    10/0        | - - - -- if anywhere in here fails it will do rescue or this
 - -- - - - - - - -                                                          |
