@@ -27,7 +27,7 @@ Ruby Notes
 014 Classes
   014.1 Derived Class
   014.2 Instantiation
-015 Classes Continued - Attr
+015 Classes Continued - Attributes or Attr
   015.1 Class Methods
 016
   016.1
@@ -35,8 +35,8 @@ Ruby Notes
 018 System Commands and Manipulating Files
   018.1 Modes for Writing/Reading to File
 019 Errors/Debugging
-  019.1
-  019.2
+  019.1 Types of Errors
+  019.2 Begin / Raise
 ===================
 Basic Notes 001
 ===================
@@ -689,13 +689,6 @@ class Human
 end
 -----------------------------------------------------------------------------
 
-
-
-
-
-
-
-
 ===============
 File Linking 016
 ===============
@@ -790,7 +783,7 @@ new_file.close - closes the file
 
 YOU MUST CLOSE ALL FILES AFTER DONE USING OR ELSE MEMORY LEAKS AND OTHER BAD PROBLEMTS
 
-\ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ /
+\ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ /
 
 new_file = File.open("first_file.txt", "r") - opens new_file
 
@@ -978,77 +971,88 @@ debugging.rb:36:in `<main>': x = 1 application got to this point (RuntimeError)
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\////////////////////////////////////
+||||||||||||||||||| UNFINISHED & UNORGANIZED NOTES ||||||||||||||||||
+//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+def get(path, options = {}, &block)
+puts before block
+yield
+puts after block
+end
 
-//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+end r = Router.new
 
-
-
-
-
-
-
-        _ _ _ _ _
-       /         \
-      /    / \    |
-     /    / _/    |
-    /      _ _ _ /
-   /        \
-  /    / \   \
- /    /   \   \
-/_ _ /     \_ _\
+r.get(”thing, {protocol: ‘https’}) do
+puts “inside block”
+end
 
 
-   _ _ _ _ _ _             _ _ _ _ _ _
-    \          \          /          /
-     \          \        /          /
-      \          \      /          /
-       \          \    /          /
-        \          \  /          /
-         \          \/          /
-          \                    /
-           \                  /
-            \                /
-            /                \
-           /                  \
-          /                    \
-         /         /\           \
-        /         /  \           \
-       /         /    \           \
-      /         /      \           \
-     /         /        \           \
-    /         /          \           \
-    - - - - -             - - - - - - -
+def debug(*data)
+	data.each do |datum|
+		puts datum
+	end
+end
 
-
-      _ _ _ _ _ _
-     /           \
-    |             \
-   /                \
-  /                 |
- |                 /
-/                 /
-| _ _ _ _ _ _ _ -/
+r.debug (“hello’, “people”, “Guys”, “girls”, “151”, “27”)
 
 
 
 
-         - - - - - - -
- / / / / ---- ---- ---\ \ \ \
-| | | | ----- / \ -----| | | |
-| | | | ----- \_/ -----| | | |
- \ \ \ \ ------  -----/ / / /
-         - - - - - - -
+#http Verb GET
+get '/' do
+  'YAY! My first site.'
+end
+
+i want to 'get' this page '/' which is homepage
+print string "yay! my first site." to '/'
+
+www.mysite.com /
+               ^
+indicates its the homepage
+
+www.mysite.com/aboutus/ruby
+                  ^      ^
+                   routes
 
 
+localhost:4567
+
+localhost - my computer/machine
+
+localhost:4567 on my machine access
+
+4567 - port
+you can have multiple websites on each computer
+the port seperates that and says this site is differnet then this other site
+so we are specifically running this site on 4567 or port: 4567
+
+sinatra has a mini web server that runs
+and when you run  sinatra boots up this weber server on port4567
 
 
-       _______
-     /       /
-    |       |
-   /       /
-  /       /
- |        |_ _ _ _ _ _
-/                    /
-|_ _ _ _ _ _ _ _ _ _ /
+get '/' do
+  file.open(views/index.html)
+end
+
+or
+
+get '/' do
+  erb :index
+end
+
+loads index.erb into
+
+
+if you edit ruby file program you have to restart it
+if you edit html files you don't have to restart it
+sinatra specifically looks for html/erb folders called views
+
+<% %>
+1. to print something 99% of the time you will use this
+2. to do something 1% of the tiem you will use this
+
+
+<%= 1 + 1 %> prints 2
+<%= josh %> prints josh
