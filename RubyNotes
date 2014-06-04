@@ -1,5 +1,17 @@
 Ruby Notes
 
+DDDDDDDDDDDDDDDDDD          PPPPPPPPPPPPPPPPPPPPP          LLLLLL
+DDDDDDDDDDDDDDDDDDDD        PPPPPPPPP       PPPPPPP        LLLLLL
+DDDDD           DDDDD       PPPPPPPP         PPPPPPP       LLLLLL
+DDDDD            DDDDD      PPPPPPPP         PPPPPPP       LLLLLL
+DDDDD             DDDDD     PPPPPPPPP       PPPPPPP        LLLLLL
+DDDDD             DDDDD     PPPPPPPPPPPPPPPPPPPPPP         LLLLLL
+DDDDD             DDDDD     PPPPP                          LLLLLL
+DDDDD            DDDDD      PPPPP                          LLLLLL
+DDDDD           DDDDD       PPPPP                          LLLLLL
+DDDDDDDDDDDDDDDDDDD         PPPPP                          LLLLLLLLLLLLLLLLLLLLL
+DDDDDDDDDDDDDDDDD           PPPPP                          LLLLLLLLLLLLLLLLLLLLL
+
 001 Basic Notes
   001.1 Commenting
 002 Terms/Definitions
@@ -29,14 +41,21 @@ Ruby Notes
   014.2 Instantiation
 015 Classes Continued - Attributes or Attr
   015.1 Class Methods
-016
-  016.1
-017 Modules
+016 Module
+017 File Linking
 018 System Commands and Manipulating Files
   018.1 Modes for Writing/Reading to File
 019 Errors/Debugging
   019.1 Types of Errors
   019.2 Begin / Raise
+
+
+Setting up Sinatra
+CSS - Cascading Style Sheets
+
+
+
+
 ===================
 Basic Notes 001
 ===================
@@ -689,8 +708,39 @@ class Human
 end
 -----------------------------------------------------------------------------
 
+
+===============
+Modules 016
+===============
+Modules are constants
+
+module Transportation
+  def going_forward
+    puts "going forward"
+  end
+end
+
+either include modules or extend modules
+
+include - methods become instance methods
+extend - methods become class methods
+---------------------------------------
+Example:
+class Car
+  include Transportation
+end
+  c = car.new
+  c.going_forward
+--------------------------
+class car
+  extend Transportation
+end
+  Car.going_forward
+----------------------------------------
+
+
 ==================
-File Linking 016
+File Linking 017
 ==================
 
 require 'name' #of file
@@ -720,36 +770,6 @@ open-uri -
 date - has many methods concerning dates
 google -
 ----------------------------------------------
-
-===============
-Modules 017
-===============
-Modules are constants
-
-module Transportation
-  def going_forward
-    puts "going forward"
-  end
-end
-
-either include modules or extend modules
-
-include - methods become instance methods
-extend - methods become class methods
----------------------------------------
-Example:
-class car
-  include Transportation
-end
-  c = car.new
-  c.going_forward
---------------------------
-class car
-  extend Transportation
-end
-  Car.going_forward
-----------------------------------------
-
 
 
 ===========================================
@@ -1000,6 +1020,28 @@ r.debug (“hello’, “people”, “Guys”, “girls”, “151”, “27”
 
 
 
+
+=====================================
+Setting up a Website with Sinatra
+=====================================
+
+
+Gemfile
+source "htttps://rubygems.org"
+
+gem "sinatra"
+
+.ruby-version
+2.1.2
+
+.ruby-gemset
+cats #project name
+
+cd out then cd back in
+reloads files
+rvm current to check
+then bundle to install all the gems we need
+
 #http Verb GET
 get '/' do
   'YAY! My first site.'
@@ -1016,7 +1058,6 @@ www.mysite.com/aboutus/ruby
                   ^      ^
                    routes
 
-
 localhost:4567
 
 localhost - my computer/machine
@@ -1031,13 +1072,13 @@ so we are specifically running this site on 4567 or port: 4567
 sinatra has a mini web server that runs
 and when you run  sinatra boots up this weber server on port4567
 
-
+Old Way
 get '/' do
   file.open(views/index.html)
 end
 
 or
-
+New Way
 get '/' do
   erb :index
 end
@@ -1051,8 +1092,234 @@ sinatra specifically looks for html/erb folders called views
 
 <% %>
 1. to print something 99% of the time you will use this
-2. to do something 1% of the tiem you will use this
-
+2. to do something 1% of the time you will use this
 
 <%= 1 + 1 %> prints 2
 <%= josh %> prints josh
+
+=====================================
+ CSS - Cascading Style Sheets
+=====================================
+*{
+  effects everything
+}
+body {
+  effects the body tag not everything in the body
+}
+#wrap {
+  # indicates it an ID and the value of the ID is wrap
+  Ids are unique
+}
+.row {
+  the "." Signifies that its a class with the value of row
+  they are not unique and applys to every class with the value of row
+}
+input[type=text] {
+  all input tags with this attribute with this value
+  input - being the value
+  type - being the attribute
+  text - being the value
+}
+ul > li {
+  find ul elements then find all of its immediant children and apply styles to that element
+  ul benig the parent
+  li being the child - all styles apply to the child
+}
+a:hover, a:active, a:focus {
+  apply these styles to all of these things
+  a:hover - find all achors where the mouse is currently hovering over them
+  a:active - find all ancshors wehre the mouse currently has a button down on them
+  a:focus - find all anchors that are currently focused
+  pusedo classes a way to define a specific action
+}
+div p.small{
+  this says find all the p tags that have a class of small that are inside of a div
+  class being small
+  p tag
+  inside of div
+}
+
+
+px - pixels, a way to determine size
+
+div#wrap
+{
+  width: 980px;
+  margin: 0 auto;
+  border: 1px solid #ff9900;
+  padding: 10px;
+  box-shadow: 1px 1px 10px #333333;
+  border-radius: 4px;
+  background-colr: #eeeeee;
+  font-size: 16px;
+  color: #333333;
+  font-family: Helvetica;
+}
+
+
+#RRGGBB
+ | | |
+ | | Blue
+ | Green
+Red
+
+#ffffff - white
+#dddddd - closer to white
+#333333 - closer to black
+#000000 - black
+#ff9900 - all the red medium green no blue
+
+
+solid rgba(255, 190, 0, 0.5)
+                         ^
+                         0 means transparent
+                         1 opague
+
+
+
+
+**************************************************************************************
+
+   jjjjjjjjjjjj
+   jjjjjjjjjjjj
+           jjjj
+           jjjj
+           jjjj        aaaaaa      vv        vv     aaaaaa
+           jjjj      aa   aaa       vv      vv    aa   aaa
+  jjjj     jjjj      aa   aaaa       vv    vv     aa   aaaa
+  jjjj     jjjj      aa   aa aa       vv  vv      aa   aa aa
+     jjjjjjj           aaa    aa       vvvv         aaa    aa
+
+              ssssss
+            ssssssssss
+          sss       sss                     iii                      ttt
+          sss                               iii                      ttt
+            sssssssss                                              ttttttt
+              ssssssss      rrr  rrrrr      iii     ppp  ppp       ttttttt
+                     sss    rrrrrr   rrr    iii     ppppp   ppp      ttt
+          sss        sss    rrr             iii     ppppp   ppp      ttt
+            ssssssssss      rrr             iii     ppp  ppp         ttt  ttt
+              ssssss        rrr             iii     ppp               ttttt
+                                                    ppp
+                                                    ppp
+***************************************************************************************
+
+"Hello World" - string
+'This is a what?' - string
+1234 - number
+432.34 - number
+[] - array
+{} - an object
+// to comment
+no string interpolation
+
+"1 plus 1 equals ".length
+
+"joshua".capitalize()
+
+very first word in the function starts with a lower case then the preceeding ones are uppercase
+reffered to as camelcasing
+
+.toUpperCase
+
+parseInt("1", 10)
+
+
+var name = "Jeremy"
+
+without the var it makes it a local variable
+you generally want to make them a var
+
+let
+
+var firstname = "Joshua";
+var lastName = "Cloward";
+var name = firstName + " " + lastName;
+
+"my name is " + name;
+
+typeof - special keyword returns data type
+
+typeof 1 - "number"
+
+Array
+
+names = ["josh", "jason", "will"];
+
+names[3] = "Ty";
+
+names.push("Ty");
+
+Objects
+
+var dog = {name: 'fluffy', age: 3}; - called an Object
+
+dog["name"] - all keys returned using a string
+even though it isn't defined as a string you still return it as a string
+
+dog['breed'] = 'pit bull';
+dog.breed = 'pit bull'; both add breed with the value of pit pull into the object
+
+dog.age  - returns age
+dog.breed - returns pit bull
+dog.name - returns fluffy
+
+creates a new variable
+
+
+console.log = puts in ruby or printing to console in the webrowser useful for debugging
+
+for(var i = 0; i < number; i++){
+
+
+}
+
+if(confirm("are you sure?"))
+
+prompt("What is your name?", "josh");
+
+
+DOM - document object model
+
+
+in a sense your webpage is an instance
+
+
+in a sense all the tags are nodes and you cna go through accepting informatino from these nodes
+
+
+
+  <div id="taco">
+      I could really go for some right now
+    </div
+
+console
+
+document in a sense is the class instance of the document
+
+document.getElementById("taco");
+grabs the secion of taco or grabs taco
+
+var tacoDiv = document.getElmentById("taco");
+
+tacoDiv.innerHTML - returns i could really go for some right now
+tacoDiv.id - returns id
+tacoDiv.style - returns all the styles of that id
+tacoDiv.style.color = "red"; - changes text to red
+
+
+html/css - background-color: #ffaaaa
+
+in programming you use camelcasing instead of -
+programming - tacoDiv.style.backgroundColor = "#ffaaaa";
+
+input css with a string
+tacoDiv.style.padding = "10px";
+
+
+html/css says make it look like this
+
+javascript says make it do this
+
+
+window object which refers to the browser itself
