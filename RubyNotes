@@ -1177,6 +1177,22 @@ solid rgba(255, 190, 0, 0.5)
 
 
 
+  HHH   HHH
+  HHH   HHH
+  HHH   HHH
+  HHHHHHHHH
+  HHH   HHH
+  HHH   HHH
+  HHH   HHH
+
+
+
+
+
+
+
+
+
 
 **************************************************************************************
 
@@ -1189,6 +1205,7 @@ solid rgba(255, 190, 0, 0.5)
   jjjj     jjjj      aa   aaaa       vv    vv     aa   aaaa
   jjjj     jjjj      aa   aa aa       vv  vv      aa   aa aa
      jjjjjjj           aaa    aa       vvvv         aaa    aa
+
 
               ssssss
             ssssssssss
@@ -1410,3 +1427,323 @@ window.onload = function() { // will be called regardless
       tacoDiv.style.color = "white";
     }, 3000)
 }
+
+input
+hidden - allows you to have data that isn't displayed on the page
+text - for a small line of text
+password - automatically changes text visual to **** for secruity purposes
+radio - multiple choice or O  ø when you click on one it fill it with a dark circle
+      radio is meant to take a group of radio inputs and only allow you to select one
+checkbox - []  []  []  allows you to select multiples
+submit - give you a button automatically - styled like a button
+reset - clear out all the data inside of your form
+
+text area - for a large block of text
+                            Types
+                  <input> ---->  Hidden
+                  <select>       Text ---->  plain text
+                  <button>       radio       email
+                  <textarea>     checkbox    url
+                                             number
+                                             password
+
+
+
+<div>
+  <form     action="where it goes"    method ="get or post" - do you want to get information or post information
+                                              if you are getting back information then you use a get
+                                              if you are posting information back to the site then you use a post
+
+  </form>
+</div>
+
+Hyper Text Transfer Protocol
+the thing that takes stuff to the place where the thing is, and gets the things from the palce with the stuff.
+
+Domain Name System
+some computers that turn your domain name into some numbers and back again.
+
+Domain Name
+http://www.**yourcoolwebsite.com** <- things that look like this
+|_ _ _|   |            ^       ^-<-<- Top level Domain - TLD
+   ^  | _ | _        Domain Name
+   |         | - Sub Domain Name
+Protocol
+
+
+Hey DNS, can you tell me
+where i can find
+
+www.ruby-lang.org?
+computer - - - - -> > >  DNS Server
+  computer asks dns server where ruby server is
+
+                      221.186.184.68
+computer < - - -< - < - DNS Server
+  Dns responds with the address of the server
+
+
+Hyper Text Markup Language
+the "stupid" web language. A Markup Language is NOT a programming language.
+
+Cascading Style Sheets
+  the thing that makes web look pretty.
+
+JavaScript
+  NOT to be confused with Java. This is the programming language that makes webpages fancy!
+
+Relational Database Management System
+A place to put your data.
+
+looks like a spreadsheet
+
+NGINX A webserver program. There's a bunch of others, too.
+
+Webserver
+A program that will send files from your website server to someone's browser.
+
+       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+       | Sinatra | - - - -> |  Webrick |- - - ->   Website
+       |- - - - -|  Ruby    |- - - - - |
+
+We have interwebz
+
+www.w3schools.com html/css
+teamtreehouse.com
+www.codeschool.com
+dochub.io - documentation on different stuff
+Join a Ruby User Group in your city.
+
+--------------
+Quick recap
+
+Type in URL
+Get IP Address of site from DNS
+Connect to webserver of website
+Website connects to DB
+Website gets files ready
+Webersver serves up website
+Your browswer downloads the requested page
+----------------------------------------------
+
+Website
+Static. Not smart. Just provides information
+
+Web Application
+Dynamic. Does stuff. Think Gmail,Facebook,Amazon,etc...
+
+******************************************************************************
+
+ RRRRRRRRRRRR                             lll
+ RRR        RRR                   iii     lll
+ RRR        RRR                   iii     lll
+ RRR      RRR                             lll
+ RRR   RRRR          aaaaaa       iii     lll    ssssss
+ RRR     RRR       aa   aaa       iii     lll   ss
+ RRR      RRR      aa   aaaa      iii     lll    ssssss
+ RRR       RRR     aa   aa aa     iii     lll         ss
+ RRR        RRR      aaa    aa    iii     lll    ssssss
+
+****************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is it?
+  A Full-stack Web Application Framework.
+
+Full-stack
+  From database to what people see on the site, and everything in-between.
+
+Framework
+  Tons of code already written to make you lazy.
+
+How Old?
+  Started in 2004 by DHH for Basecamp
+                      David Hinemar Hansen
+
+Basecamp
+project management used to go back adn forth between the client and developer
+
+It's built in Ruby! Lets you ake applications quick, and easy.
+
+Ruby Programming Language
+
+Rails - Framework Built in Ruby
+
+1. Fast Prototyping
+2. Quick Deployment
+3. Easy Iterations
+4. Less time saves money
+5. Open source is cheap
+
+NodeJS
+Express, Sails
+
+Python
+Django, Grok
+
+PHP
+Cake, Code ignitor, Fuel, Symfony, Kohana
+
+Scala
+Play,Lift
+
+1. M - Model
+2. V - View
+3. C - Controller
+
+O_o
+ it's just organization ...
+
+^_^
+ Convention over Configuration.
+
+
+
+
+rails new address_book
+new rails app called adress book
+
+rails generate scaffold
+generates an exo-skeleton or structure for your rails
+helps with construction
+generally used for protoyping
+
+never ever use scaffolding in a actual application
+
+rails server
+boots up page
+
+generate is a command
+
+scaffold is a arguement to generate
+
+Contact is a arguement to scaffold
+
+name:string , address:string is an attribute to the class Contact
+do the name of the attribute then a : then the type of the attribute
+
+
+rake allows you to make terminal based tasks
+and handles instructions/code for you and then finishes
+
+rake db:migrate
+lets go ahead and connect to the database and then were
+going to update the database with all the changes we made from rails
+
+rails server
+then we booted up the server specifically useing webrink at the moment locally
+
+rails new generates a new rails structure
+
+
+---Folders---
+app folder - heavyiest and most important folder all the code that makes your application what it is goes inside here
+  assets - images, javascripts, style sheets where you write stuff and put it in there 'your code' reason you put it in here prior to rails 3.0/2.0
+      that stuff did go into the public directory the reason it was taken out and put into app assets is because rails comes with this thing called assets pipeline one of those
+      things being comrpessing assets images/stylesheets/javascripts you dl all those files the larger the files is the longer it takes if you compress them it makes them smaller rail will comepress
+      them for us so we can write these big giant files so rails will actually shrink them down for us sinatra actually does not do that for us you would have to do that manually in sinatra rails does
+      it for us by adding it into assets rails also adds in cache files so if it changes rails will take care of it rails automatically cache this file the second its change rails updates it
+  controllers - Models Views Controllers
+  helpers - are Modules
+  mailers - information that needs to be sent out, very common every use , user mailer ruby class that handles mailing users specifically, password resets, coupons, verifying
+  models - real world objects that were modeling after  address book for instance modeling after an actually address book and the class doesn't have any methods in it but it does inheirit from activerecord::base it can do a ton of stuff because of the inheiritance
+  views - what you see the actual pages
+    layout - has the basic layout
+
+bin - new to rails 4.0 is basically where you put programs your going to run IN the program app
+      little mini programs your running in your application rake,bundle,rails,spring
+config - configuration
+  enviroment - set up different configuration files for different enviroments
+  initializers - when your application first runs its gonna go through each initializer and run code
+                your application has to connect to twitter so you can push/pull tweets you need a special key to connect to twitter
+                in your initializer when your application boots set my password to be this value so when you conect to twitter you already have hte password set up
+                or you want your program to be in a different language
+  locales - by default rails knows how to make your website multi-language (english/spanish)
+            create a .yaml file to make that into that language jp.yaml anytime i say hello in the app i mean oh hai oh gosaimasu
+            create a dictionary for if i say this say (this) in japanese
+  application - THE MAIN FILE every application has an entry point file  sinatra we made app.rb
+                for rails its this file requires files requires dependencys tells bundler to require everything in bundler
+                sets up module add in current config settings too
+  boot.rb   not really going to touch
+
+  database.yml - sets up database stuff KEEP PROTECTED
+  enviroment.rb initializes application not really going to touch
+  routes.rb - anytime you wanna specifiy a route whether it be to post to a contact for or gets to another page
+              gets/posts even though forms do generally either gets or posts you have access to options, deletes rails does the transition for us
+  secrets.yaml - in real life scenario this file would be protected holds special keys/passwords
+
+
+db - DataBase
+  migrate- db:migrate that rake task looks inside the db>migrate folder file is a ruby class
+  development.sqlite3 - ruby gem that is a wrapper around handling the sqlite3 database
+            sqlite is its own program because it has nothing to do with ruby you need a way for ruby to talk to it so we add in a gem
+            sqlite3 is teh database and thats where it gets stored inside of sqlite3
+  schema.rb - you will never touch auto-generated file, running rake db:migrate generates it schema is the blueprints of your database how the database is constructed
+            it is a great file to use as reference KEEP PROTECTED
+  seeds.rb - meant for putting data that your application requires to start up
+              used for fake data simulate users or other such things how does my site run with 1000 users?
+
+lib - assets isn't really used
+   tasks >> there might be a time where you have to build your own rake task when you
+      do you add it into this folder when you add it rails will automatically pick it up and add it into the application for you
+
+
+log - development log seperate enviroments where different things are gonna run
+      the other being production enviroment so you can segment the log files to
+      log out information depending on which department were in in this case
+      everything locally everything we do locally will be saved in this file really
+      good for debugging applications
+
+public - you don't want to show how your app works the only thing that the populace sees but in rails everything is private other then whats in the public folder
+  404.html server error message if page does not exist
+  422.html
+  500.html - server error message broken
+  favicon.ico - favorites icon
+  robots.txt - a program that has its own brain and knows how to do something,
+          robots.txt does is either allow or disallow webcrawlers or
+        block a specific page from being index'd from say a googles webcrawlers
+  humans.txt - a place to show who built the application and what programs they used to build it
+
+test - we are asserting that if we take 1 and add 1 it will = 2
+       we right code in our tests folder when i run this method it will always give me the value i want
+       i am 100% positive that every single time i run this is it will work and i will get back the result i want
+       a place to store code to test your code
+
+tmp - temporarily stores stuff and then you will delete it out of there
+      all kinds of files will be added in there for you
+      generally you never have to add stuff in
+
+vendor - both js and css
+   used for third paty javascript and css implementation
+   Things used in your application but built by someone else
+  .keep - git thing folder is empty but i want to keep it inside of my repository
+
+
+---Files---
+.Ds_Store
+
+.gitignore - might have a file in here that lists all of the logins and passwords for all the different things
+              how the application connects to the server or database so you would tell the gitignore to ignore my secret password file
+
+config.ru -all rack applications use config.ru for basically serving up there information with centralized rack concept rack applications are
+            like legos and each peices of legos are programs you can connect them together as many times as you want by having the
+            config.ru that is the lego end point you can basically have a rails app inside of a rails app inside of a rails app or a sinatra app
+            thats inside of a rails app, sinatra is a rack application, rails is a rack application,
+
+README.rdoc - file with some instructions welcome to rails heres how its started rdoc documentation
+
+Rakefile - tells that rake application what rake stuff we have, without this rake db:migrate would not work, sets it up where
+            we can add up our own custom rake tasks- normally never touch it
+
+Gemfile - rails does the source and lists all the gems that are required to run rails
