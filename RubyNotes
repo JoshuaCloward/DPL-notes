@@ -1,5 +1,11 @@
 Ruby Notes
 
+
+ ///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 DDDDDDDDDDDDDDDDDD          PPPPPPPPPPPPPPPPPPPPP          LLLLLL
 DDDDDDDDDDDDDDDDDDDD        PPPPPPPPP       PPPPPPP        LLLLLL
 DDDDD           DDDDD       PPPPPPPP         PPPPPPP       LLLLLL
@@ -11,6 +17,11 @@ DDDDD            DDDDD      PPPPP                          LLLLLL
 DDDDD           DDDDD       PPPPP                          LLLLLL
 DDDDDDDDDDDDDDDDDDD         PPPPP                          LLLLLLLLLLLLLLLLLLLLL
 DDDDDDDDDDDDDDDDD           PPPPP                          LLLLLLLLLLLLLLLLLLLLL
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 001 Basic Notes
   001.1 Commenting
@@ -1175,17 +1186,17 @@ solid rgba(255, 190, 0, 0.5)
                          0 means transparent
                          1 opague
 
+******************************************************
 
+  HHH   HHH    ttt                         lll
+  HHH   HHH    ttt                         lll
+  HHH   HHH  ttttttt                       lll
+  HHHHHHHHH    ttt       mm mm mm mmmmmm   lll
+  HHH   HHH    ttt       mmm    mmm    mm  lll
+  HHH   HHH    ttt  ttt  mm      m     mm  lll
+  HHH   HHH     tttttt   mm            mm  lll
 
-  HHH   HHH
-  HHH   HHH
-  HHH   HHH
-  HHHHHHHHH
-  HHH   HHH
-  HHH   HHH
-  HHH   HHH
-
-
+******************************************************
 
 
 
@@ -1545,18 +1556,6 @@ Dynamic. Does stuff. Think Gmail,Facebook,Amazon,etc...
  RRR        RRR      aaa    aa    iii     lll    ssssss
 
 ****************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
 
 What is it?
   A Full-stack Web Application Framework.
