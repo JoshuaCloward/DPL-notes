@@ -1353,6 +1353,16 @@ javascript says make it do this
 window object which refers to the browser itself
 
 
+Window.onload = function() {
+  alert("")
+
+}
+
+window.load
+-not running just defining
+
+window.load()
+- running the function
 
 
 other stuff
@@ -1746,3 +1756,131 @@ Rakefile - tells that rake application what rake stuff we have, without this rak
             we can add up our own custom rake tasks- normally never touch it
 
 Gemfile - rails does the source and lists all the gems that are required to run rails
+
+
+
+==============
+Data Storage
+==============
+
+Data Storage Mediums
+
+* File System - flat files, really slow text/notes/yaml
+
+* Memory - extremely fast, fastest way to save/retreive, saved on the RAM, if restart computer might be lost
+
+* Database - programs that store data, most stable way, most stable
+
+---------------------------
+Database Types
+-----------------------------------------------------------------------
+
+* SQL (Sequal-structured english query language) - programming language
+
+    Commands are all in caps
+SELECT * - * means everything - select all of the columns
+FROM `languages` - in the language table
+WHERE `lanugages.name` = "Ruby" where the language name column is equal to ruby, table called languages in a list it has programming language
+LIMIT 1 - limits to 1
+ORDER BY `id` DESC; ordre by id in descending order
+
+Common SQL DB (programs/apps made in/for SQL)
+* MySQL - big names use this, requires database engineer
+* PostgreSQL - new kid on the block
+* SQLite3 - been around for awhile more of a super small liter end database, some small video games use SQLite3 save like 3 different games or for mobile apps
+* SQLServer - been around for quite a bit specifically microsoft product very expensive, very large interprise like banks
+* Oracle - kind of has its own version of SQL
+
+------------------------------------------------------
+
+* NoSQL
+  *  db.find({name:'Ruby'}).limit(1).order('name');
+  *  uses javascript
+  *  NoSQL is not relational -you have to query and then put together
+  *  NoSQL databases are way faster
+  *  Optomized for reading
+Common NoSQL DB
+  * CouchDB
+  * MongoDB - optomized for readability
+  * RethinkDB
+
+
+  idea is put data into database with SQL
+  and then pull it out with NoSQL
+  MOSQL transferes data from SQL to NoSQL
+
+--------------------------------------------
+
+* Graph
+  * Neo4J -
+  * Oracle Spatial
+  * Titan
+
+Not Necessarily a SQL Database or a NoSQL Database own special type
+
+series of Nodes(circles) and Edges(lines) edges connect Nodes together
+
+------------------------------------------------------------------------
+
+==============================================================
+
+  PPPPP
+  P   PPP                t
+  PPPPP                 ttt
+  P        oo     __     t       ggg   r_--_   eee
+  P       o  o   s__     t  t   g  g   r      e---e
+  P        oo     __s     tt     ggg   r       e__-
+                                   g
+                                g  g
+                                 gg
+==============================================================
+by caching your application you can gain lots of speed and the faster your app runs the more users you can have
+index a particular column saying im gonna be using this a lot
+HStore
+
+GIS Geospatial - allows you to store geo points into your database (coordinates, latitude, longitude)
+
+Full-text search - allows you to search for specific text even if you mispelt it
+
+new columns! -
+
+String
+text
+datetime
+date
+time
+float
+
+Array - postgre specific
+
+
+
+
+
+
+
+
+
+new rails elephant -d postgresql
+
+inside of comfig / database.yml add in host:localhost under elephant_development
+
+check for pg gem in Gemfile
+
+have to create database manually
+rake db:create
+if it works you should be on the next line
+if its not sqlite you have to create the database
+
+generate scaffolding
+
+manually adjust and add things into database
+because its not rails its a seperate program
+rake db:migrate
+
+
+rails console - puts you in a irb with a rails enviroment
+Rails.env
+
+
+twitter bootstrap
