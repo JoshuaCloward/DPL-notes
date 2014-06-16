@@ -1,0 +1,347 @@
+**************************************************************************************
+
+   jjjjjjjjjjjj
+   jjjjjjjjjjjj
+           jjjj
+           jjjj
+           jjjj        aaaaaa      vv        vv     aaaaaa
+           jjjj      aa   aaa       vv      vv    aa   aaa
+  jjjj     jjjj      aa   aaaa       vv    vv     aa   aaaa
+  jjjj     jjjj      aa   aa aa       vv  vv      aa   aa aa
+     jjjjjjj           aaa    aa       vvvv         aaa    aa
+
+
+              ssssss
+            ssssssssss
+          sss       sss                     iii                      ttt
+          sss                               iii                      ttt
+            sssssssss                                              ttttttt
+              ssssssss      rrr  rrrrr      iii     ppp  ppp       ttttttt
+                     sss    rrrrrr   rrr    iii     ppppp   ppp      ttt
+          sss        sss    rrr             iii     ppppp   ppp      ttt
+            ssssssssss      rrr             iii     ppp  ppp         ttt  ttt
+              ssssss        rrr             iii     ppp               ttttt
+                                                    ppp
+                                                    ppp
+***************************************************************************************
+
+"Hello World" - string
+'This is a what?' - string
+1234 - number
+432.34 - number
+[] - array
+{} - an object
+// to comment
+no string interpolation
+
+"1 plus 1 equals ".length
+
+"joshua".capitalize()
+
+very first word in the function starts with a lower case then the preceeding ones are uppercase
+reffered to as camelcasing
+
+.toUpperCase
+
+parseInt("1", 10)
+
+
+var name = "Jeremy"
+
+without the var it makes it a local variable
+you generally want to make them a var
+
+let
+
+var firstname = "Joshua";
+var lastName = "Cloward";
+var name = firstName + " " + lastName;
+
+"my name is " + name;
+
+typeof - special keyword returns data type
+
+typeof 1 - "number"
+
+Array
+
+names = ["josh", "jason", "will"];
+
+names[3] = "Ty";
+
+names.push("Ty");
+
+Objects
+
+var dog = {name: 'fluffy', age: 3}; - called an Object
+
+dog["name"] - all keys returned using a string
+even though it isn't defined as a string you still return it as a string
+
+dog['breed'] = 'pit bull';
+dog.breed = 'pit bull'; both add breed with the value of pit pull into the object
+
+dog.age  - returns age
+dog.breed - returns pit bull
+dog.name - returns fluffy
+
+creates a new variable
+
+
+console.log = puts in ruby or printing to console in the webrowser useful for debugging
+
+for(var i = 0; i < number; i++){
+
+
+}
+
+if(confirm("are you sure?"))
+
+prompt("What is your name?", "josh");
+
+
+DOM - document object model
+
+
+in a sense your webpage is an instance
+
+
+in a sense all the tags are nodes and you cna go through accepting informatino from these nodes
+
+
+
+  <div id="taco">
+      I could really go for some right now
+    </div
+
+console
+
+document in a sense is the class instance of the document
+
+document.getElementById("taco");
+grabs the secion of taco or grabs taco
+
+var tacoDiv = document.getElmentById("taco");
+
+tacoDiv.innerHTML - returns i could really go for some right now
+tacoDiv.id - returns id
+tacoDiv.style - returns all the styles of that id
+tacoDiv.style.color = "red"; - changes text to red
+
+
+html/css - background-color: #ffaaaa
+
+in programming you use camelcasing instead of -
+programming - tacoDiv.style.backgroundColor = "#ffaaaa";
+
+input css with a string
+tacoDiv.style.padding = "10px";
+
+
+html/css says make it look like this
+
+javascript says make it do this
+
+
+window object which refers to the browser itself
+
+
+Window.onload = function() {
+  alert("")
+
+}
+
+window.load
+-not running just defining
+
+window.load()
+- running the function
+
+
+other stuff
+
+// // My First JS program!
+// //
+// // var firstName = "Jshua";
+// // var lastName = "Cloward";
+// // var fullName = firstName + " " + lastName;
+// // var greeting = "Hello, my name is " + fullName;
+// //
+// // // greeting is NOT a function, so no parenths
+// // // alert IS a function, so we use paraneths
+// // console.log(greeting);
+// //
+// // var x = 1;
+// // var y = 13;
+// // var sum = x + y;
+// // console.log("The sum of " + x + " and " + y + " is " + sum);
+//
+//
+//
+// var age = 21
+//
+// if(age >= 21)
+//   {
+//     console.log("YO! Let's hit up the club")
+//   }
+//   else if(age < 21 && age > 19)
+//   {
+//     console.log("sucky age")
+//   }
+//   else
+//   {
+//     console.log("Sorry, no club for you")
+//   }
+//
+// var name = ['Joshua', 'Jason', 'Will'];
+//
+//   for(var i = 0;i < name.length;i++)
+//   {
+//     console.log(name[i]);
+//   }
+//
+//
+//
+//   var people = [
+//       {name: "Joshua", age: 21},
+//       {name: "Ty", age: 27},
+//       {name: "Fluffy", age: 3}
+//     ];
+//
+//     for(i = 0; i < people.length; i++)
+//     {
+//       console.log(people[i].name)
+//       console.log(people[i].age)
+//     }
+//
+//
+// if(confirm("Are you sure?"))
+//   {
+//     console.log("come in and have a drink!")
+//   } else {
+//     console.log("Yu must be 21 to enter")
+//   }
+//
+//
+//
+// var AGE = prompt("What is your age?")
+//
+// if(parseInt(age) >= 18) {
+//     console.log("You can vote")
+//
+// } else {
+//   console.log("No voting for you yet")
+// }
+
+var tacoDiv = document.getElementById("taco")
+
+window.onload = function() { // will be called regardless
+    tacoDiv.style.backgroundColor = "red"
+    window.setTimeout(function(){
+      tacoDiv.style.color = "white";
+    }, 3000)
+}
+
+input
+hidden - allows you to have data that isn't displayed on the page
+text - for a small line of text
+password - automatically changes text visual to **** for secruity purposes
+radio - multiple choice or O  ø when you click on one it fill it with a dark circle
+      radio is meant to take a group of radio inputs and only allow you to select one
+checkbox - []  []  []  allows you to select multiples
+submit - give you a button automatically - styled like a button
+reset - clear out all the data inside of your form
+
+text area - for a large block of text
+                            Types
+                  <input> ---->  Hidden
+                  <select>       Text ---->  plain text
+                  <button>       radio       email
+                  <textarea>     checkbox    url
+                                             number
+                                             password
+
+
+
+<div>
+  <form     action="where it goes"    method ="get or post" - do you want to get information or post information
+                                              if you are getting back information then you use a get
+                                              if you are posting information back to the site then you use a post
+
+  </form>
+</div>
+
+Hyper Text Transfer Protocol
+the thing that takes stuff to the place where the thing is, and gets the things from the palce with the stuff.
+
+Domain Name System
+some computers that turn your domain name into some numbers and back again.
+
+Domain Name
+http://www.**yourcoolwebsite.com** <- things that look like this
+|_ _ _|   |            ^       ^-<-<- Top level Domain - TLD
+   ^  | _ | _        Domain Name
+   |         | - Sub Domain Name
+Protocol
+
+
+Hey DNS, can you tell me
+where i can find
+
+www.ruby-lang.org?
+computer - - - - -> > >  DNS Server
+  computer asks dns server where ruby server is
+
+                      221.186.184.68
+computer < - - -< - < - DNS Server
+  Dns responds with the address of the server
+
+
+Hyper Text Markup Language
+the "stupid" web language. A Markup Language is NOT a programming language.
+
+Cascading Style Sheets
+  the thing that makes web look pretty.
+
+JavaScript
+  NOT to be confused with Java. This is the programming language that makes webpages fancy!
+
+Relational Database Management System
+A place to put your data.
+
+looks like a spreadsheet
+
+NGINX A webserver program. There's a bunch of others, too.
+
+Webserver
+A program that will send files from your website server to someone's browser.
+
+       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+       | Sinatra | - - - -> |  Webrick |- - - ->   Website
+       |- - - - -|  Ruby    |- - - - - |
+
+We have interwebz
+
+www.w3schools.com html/css
+teamtreehouse.com
+www.codeschool.com
+dochub.io - documentation on different stuff
+Join a Ruby User Group in your city.
+
+--------------
+Quick recap
+
+Type in URL
+Get IP Address of site from DNS
+Connect to webserver of website
+Website connects to DB
+Website gets files ready
+Webersver serves up website
+Your browswer downloads the requested page
+----------------------------------------------
+
+Website
+Static. Not smart. Just provides information
+
+Web Application
+Dynamic. Does stuff. Think Gmail,Facebook,Amazon,etc...

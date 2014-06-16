@@ -1,0 +1,287 @@
+----------------------
+Application Planning
+----------------------
+
+first give it a name
+
+why are youu building the app
+
+
+google- how can i find information on the internet
+twitter - how can i let my friends know what im doing really quick
+
+MVP - Minimal Viable Product
+
+minimal amount that makes it what you need
+
+when you start planning you have to plan for your mvp
+
+try to ship enough versions as much as possible
+
+
+application versioning has 3 numbers most fo the time
+
+Major, Minor, Bug - Patch
+
+Ruby - 2.1.2
+Rails - 4.1.1
+
+Major - Full ui or ux changes brand new functionallity more features fixed many bugs
+
+Minor - added some new features maybe just one
+
+bug/patch - fixed some bugs no new features same ui the features just actually work
+            speed fixes, bug fixes, secruity hole fix.
+
+
+list all the features you want your app to have
+maybe go through and number them or mark them
+out of those features which ones do you need
+
+Feature List                MVP List          1.1.0          2.1.0
+----------------           ----------        -------       ---------
+HODOR- - - - - - - - - - - - HODOR!           hodor          HoDoR
+hodor - 3 days - 9 days                                     HooDOR!!
+HoDoR - one day - 3 days
+HooDOR!! -  4 hours - 12 hours
+
+then you can start setting up deadlines
+whatever you think its gonna take you triple it
+
+
+
+MVP List
+---------
+HODOR!
+what are the objects that we are interacting with for this
+
+Models
+-------
+ User - what all does the user have
+   name - string
+   email - string
+   password - string
+   active status - boolean default: true
+
+Status Update - belongs to user, user can have many status updates
+   blocktext - string
+   posted at - datetime
+
+Tools
+--------
+Relational Database
+Rails - since connecting to database
+Sidekick pro - $750
+
+draw out how the site will look
+what order do they go through the pages
+Plan out the Flow
+
+MVP generally isn't the prettiest
+
+set up routes and controllers
+what pages your created
+what is generally on those pages
+not 100% accurate just a general idea of what your actually looking for
+
+now that you have an idea you now have a goal for you to shoot for
+
+1. Name the App
+2. Describe waht the app does in few words (i.e. what proble is it trying to solve)
+3. Create your feature list
+4. Sort the feature list to create the MVP
+5. Sort the remaining features to create subsequent releases
+6. Plan out all MVP objects (i.e. models and attributes)
+7. Gather list of tools needed to build MVP
+8. Discuss UI and user flow with mocks
+Mockup Creators - Balsamiq, Invision App, Inkscape
+
+By this point you should have enough information to be able to build the app
+
+
+
+
+
+1. TeachersHub
+2. A place where teachers can compare teaching material
+3. Features
+---------------
+  User Login
+  Searching Function
+  Post Teaching Material
+  Give Positive Feedback
+  Sorting Function
+
+4. MVP List
+--------------
+  User Login
+  Segmenting Different Grades
+  Posting Teaching Material
+  Finding Teaching Material
+
+5. Remaining Features
+-----------------------
+  Sorting
+  Liking/Feedback
+  Creating Own Teaching Course/Organizing
+
+6. Models
+-----------
+  User
+    has_many :course, :lesson
+    belongs_to :Curricurlem
+    name
+    grade
+    email
+    password
+    role
+    specialty
+    Started teaching
+
+
+  Course/Subject belongs to User
+    has_many :course, :photos, :videos, :pdfs/text
+    texts/pdfs
+    pictures
+    videos
+    feedback
+    created_at
+
+
+  Lesson/Topic belongs to user, belongs to course
+    txt/pdf
+    picture
+    video
+    feedback
+    created_at
+
+  Curricurlem has_many
+    school district
+
+  Photo/Video belongs_to Course/Lesson
+
+----------------
+
+7. Tools
+----------
+8.
+
+
+
+App name - Theater Express
+ Find Theaters and see what plays are happening at those along with times and so on
+ Find Plays Around Your Area
+
+ 4.Feature List
+ --------------
+ Geo Targeting - Find plays around your area
+ Search For Theaters
+ Play Types
+ Feedback
+ Mobile
+ How to get to the Theater
+ User Login
+ History of Plays you've seen
+ Display Upcoming Plays
+ Search for Movies
+
+ 4. MVP List
+ ---------
+ Search For Theaters
+ Display Upcoming Plays at those Theaters
+
+ 5. Remaining Features
+    -------------------
+    Geo Targeting - Find plays around your area - long
+    Feedback - short
+    Mobile - Long time
+    How to get to the Theater - short time
+    User Login - short time
+    History of Plays you've seen - medium?
+    Search for Movies - short time
+
+ 6. Model
+ --------
+  Theater
+    has_many :plays :seats :photo :review
+    has_one :concessions
+    Name
+    Adress
+    cost?
+    review
+
+  Plays
+    belongs_to :theater
+    has_many :actors :photo :review
+    name
+    type/category
+    maker
+    length
+    description
+    cost
+
+  Photo
+    belongs_to :plays :theater
+    size
+    format
+    description
+    location
+    Play Photo or Theater Photo
+
+  Actors
+    belongs_to :play
+    name
+    age
+    schooling
+    expirience
+    past plays
+
+  Seats
+    belongs_to :theater
+    number int
+    taken boolean
+    type
+    material
+
+  Concessions
+    belongs_to :theater
+    has_many :outsidefood
+    drinks
+    food
+
+  Outsidefood
+    belongs_to :concessions
+    outside store information
+
+  Review
+    belongs_to :theater :play
+    stars?
+    description
+    play/theater
+
+  History
+    belongs_to :theater :play
+    Play
+      where its been
+      quality of previous plays
+    Theater
+      what plays have been there
+      quality of plays
+      how well the plays did there
+
+7.Tools
+  -------
+  Rails
+  Google maps? Geolocator?
+  Querying Database? at first
+  grab data from the theaters or create your own or another site
+
+8.Ui Flow
+  Mainly be a one page website at first
+  Category of plays?
+  search threw database for either play or theater
+  show a specific play/theater
+  select theater to show theater information
+  inside of the theater show the plays that play there
+  select play to show the play information
+  

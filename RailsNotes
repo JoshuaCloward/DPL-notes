@@ -1,0 +1,682 @@
+*****************************************************************************
+
+ RRRRRRRRRRRR                             lll
+ RRR        RRR                   iii     lll
+ RRR        RRR                   iii     lll
+ RRR      RRR                             lll
+ RRR   RRRR          aaaaaa       iii     lll    ssssss
+ RRR     RRR       aa   aaa       iii     lll   ss
+ RRR      RRR      aa   aaaa      iii     lll    ssssss
+ RRR       RRR     aa   aa aa     iii     lll         ss
+ RRR        RRR      aaa    aa    iii     lll    ssssss
+
+****************************************************************************
+
+What is it?
+  A Full-stack Web Application Framework.
+
+Full-stack
+  From database to what people see on the site, and everything in-between.
+
+Framework
+  Tons of code already written to make you lazy.
+
+How Old?
+  Started in 2004 by DHH for Basecamp
+                      David Hinemar Hansen
+
+
+
+
+Basecamp
+project management used to go back adn forth between the client and developer
+
+It's built in Ruby! Lets you ake applications quick, and easy.
+
+Ruby Programming Language
+
+Rails - Framework Built in Ruby
+
+1. Fast Prototyping
+2. Quick Deployment
+3. Easy Iterations
+4. Less time saves money
+5. Open source is cheap
+
+NodeJS
+Express, Sails
+
+Python
+Django, Grok
+
+PHP
+Cake, Code ignitor, Fuel, Symfony, Kohana
+
+Scala
+Play,Lift
+
+1. M - Model
+2. V - View
+3. C - Controller
+
+O_o
+ it's just organization ...
+
+^_^
+ Convention over Configuration.
+
+
+
+
+rails new address_book
+new rails app called adress book
+
+rails generate scaffold
+generates an exo-skeleton or structure for your rails
+helps with construction
+generally used for protoyping
+
+never ever use scaffolding in a actual application
+
+rails server
+boots up page
+
+generate is a command
+
+scaffold is a arguement to generate
+
+Contact is a arguement to scaffold
+
+name:string , address:string is an attribute to the class Contact
+do the name of the attribute then a : then the type of the attribute
+
+
+rake allows you to make terminal based tasks
+and handles instructions/code for you and then finishes
+
+rake db:migrate
+lets go ahead and connect to the database and then were
+going to update the database with all the changes we made from rails
+
+rails server
+then we booted up the server specifically useing webrink at the moment locally
+
+rails new generates a new rails structure
+
+
+---Folders---
+app folder - heavyiest and most important folder all the code that makes your application what it is goes inside here
+  assets - images, javascripts, style sheets where you write stuff and put it in there 'your code' reason you put it in here prior to rails 3.0/2.0
+      that stuff did go into the public directory the reason it was taken out and put into app assets is because rails comes with this thing called assets pipeline one of those
+      things being comrpessing assets images/stylesheets/javascripts you dl all those files the larger the files is the longer it takes if you compress them it makes them smaller rail will comepress
+      them for us so we can write these big giant files so rails will actually shrink them down for us sinatra actually does not do that for us you would have to do that manually in sinatra rails does
+      it for us by adding it into assets rails also adds in cache files so if it changes rails will take care of it rails automatically cache this file the second its change rails updates it
+  controllers - Models Views Controllers
+  helpers - are Modules
+  mailers - information that needs to be sent out, very common every use , user mailer ruby class that handles mailing users specifically, password resets, coupons, verifying
+  models - real world objects that were modeling after  address book for instance modeling after an actually address book and the class doesn't have any methods in it but it does inheirit from activerecord::base it can do a ton of stuff because of the inheiritance
+  views - what you see the actual pages
+    layout - has the basic layout
+
+bin - new to rails 4.0 is basically where you put programs your going to run IN the program app
+      little mini programs your running in your application rake,bundle,rails,spring
+config - configuration
+  enviroment - set up different configuration files for different enviroments
+  initializers - when your application first runs its gonna go through each initializer and run code
+                your application has to connect to twitter so you can push/pull tweets you need a special key to connect to twitter
+                in your initializer when your application boots set my password to be this value so when you conect to twitter you already have hte password set up
+                or you want your program to be in a different language
+  locales - by default rails knows how to make your website multi-language (english/spanish)
+            create a .yaml file to make that into that language jp.yaml anytime i say hello in the app i mean oh hai oh gosaimasu
+            create a dictionary for if i say this say (this) in japanese
+  application - THE MAIN FILE every application has an entry point file  sinatra we made app.rb
+                for rails its this file requires files requires dependencys tells bundler to require everything in bundler
+                sets up module add in current config settings too
+  boot.rb   not really going to touch
+
+  database.yml - sets up database stuff KEEP PROTECTED
+  enviroment.rb initializes application not really going to touch
+  routes.rb - anytime you wanna specifiy a route whether it be to post to a contact for or gets to another page
+              gets/posts even though forms do generally either gets or posts you have access to options, deletes rails does the transition for us
+  secrets.yaml - in real life scenario this file would be protected holds special keys/passwords
+
+
+db - DataBase
+  migrate- db:migrate that rake task looks inside the db>migrate folder file is a ruby class
+  development.sqlite3 - ruby gem that is a wrapper around handling the sqlite3 database
+            sqlite is its own program because it has nothing to do with ruby you need a way for ruby to talk to it so we add in a gem
+            sqlite3 is teh database and thats where it gets stored inside of sqlite3
+  schema.rb - you will never touch auto-generated file, running rake db:migrate generates it schema is the blueprints of your database how the database is constructed
+            it is a great file to use as reference KEEP PROTECTED
+  seeds.rb - meant for putting data that your application requires to start up
+              used for fake data simulate users or other such things how does my site run with 1000 users?
+
+lib - assets isn't really used
+   tasks >> there might be a time where you have to build your own rake task when you
+      do you add it into this folder when you add it rails will automatically pick it up and add it into the application for you
+
+
+log - development log seperate enviroments where different things are gonna run
+      the other being production enviroment so you can segment the log files to
+      log out information depending on which department were in in this case
+      everything locally everything we do locally will be saved in this file really
+      good for debugging applications
+
+public - you don't want to show how your app works the only thing that the populace sees but in rails everything is private other then whats in the public folder
+  404.html server error message if page does not exist
+  422.html
+  500.html - server error message broken
+  favicon.ico - favorites icon
+  robots.txt - a program that has its own brain and knows how to do something,
+          robots.txt does is either allow or disallow webcrawlers or
+        block a specific page from being index'd from say a googles webcrawlers
+  humans.txt - a place to show who built the application and what programs they used to build it
+
+test - we are asserting that if we take 1 and add 1 it will = 2
+       we right code in our tests folder when i run this method it will always give me the value i want
+       i am 100% positive that every single time i run this is it will work and i will get back the result i want
+       a place to store code to test your code
+
+tmp - temporarily stores stuff and then you will delete it out of there
+      all kinds of files will be added in there for you
+      generally you never have to add stuff in
+
+vendor - both js and css
+   used for third paty javascript and css implementation
+   Things used in your application but built by someone else
+  .keep - git thing folder is empty but i want to keep it inside of my repository
+
+
+---Files---
+.Ds_Store
+
+.gitignore - might have a file in here that lists all of the logins and passwords for all the different things
+              how the application connects to the server or database so you would tell the gitignore to ignore my secret password file
+
+config.ru -all rack applications use config.ru for basically serving up there information with centralized rack concept rack applications are
+            like legos and each peices of legos are programs you can connect them together as many times as you want by having the
+            config.ru that is the lego end point you can basically have a rails app inside of a rails app inside of a rails app or a sinatra app
+            thats inside of a rails app, sinatra is a rack application, rails is a rack application,
+
+README.rdoc - file with some instructions welcome to rails heres how its started rdoc documentation
+
+Rakefile - tells that rake application what rake stuff we have, without this rake db:migrate would not work, sets it up where
+            we can add up our own custom rake tasks- normally never touch it
+
+Gemfile - rails does the source and lists all the gems that are required to run rails
+
+
+
+==============
+Data Storage
+==============
+
+Data Storage Mediums
+
+* File System - flat files, really slow text/notes/yaml
+
+* Memory - extremely fast, fastest way to save/retreive, saved on the RAM, if restart computer might be lost
+
+* Database - programs that store data, most stable way, most stable
+
+---------------------------
+Database Types
+-----------------------------------------------------------------------
+
+* SQL (Sequal-structured english query language) - programming language
+
+    Commands are all in caps
+SELECT * - * means everything - select all of the columns
+FROM `languages` - in the language table
+WHERE `lanugages.name` = "Ruby" where the language name column is equal to ruby, table called languages in a list it has programming language
+LIMIT 1 - limits to 1
+ORDER BY `id` DESC; ordre by id in descending order
+
+Common SQL DB (programs/apps made in/for SQL)
+* MySQL - big names use this, requires database engineer
+* PostgreSQL - new kid on the block
+* SQLite3 - been around for awhile more of a super small liter end database, some small video games use SQLite3 save like 3 different games or for mobile apps
+* SQLServer - been around for quite a bit specifically microsoft product very expensive, very large interprise like banks
+* Oracle - kind of has its own version of SQL
+
+------------------------------------------------------
+
+* NoSQL
+  *  db.find({name:'Ruby'}).limit(1).order('name');
+  *  uses javascript
+  *  NoSQL is not relational -you have to query and then put together
+  *  NoSQL databases are way faster
+  *  Optomized for reading
+Common NoSQL DB
+  * CouchDB
+  * MongoDB - optomized for readability
+  * RethinkDB
+
+
+  idea is put data into database with SQL
+  and then pull it out with NoSQL
+  MOSQL transferes data from SQL to NoSQL
+
+--------------------------------------------
+
+* Graph
+  * Neo4J -
+  * Oracle Spatial
+  * Titan
+
+Not Necessarily a SQL Database or a NoSQL Database own special type
+
+series of Nodes(circles) and Edges(lines) edges connect Nodes together
+
+------------------------------------------------------------------------
+
+==============================================================
+
+  PPPPP
+  P   PPP                8
+  PPPPP                 888
+  P        oo     __     8      ggg   r_--_   eee
+  P       o  o   *__     8   _   g  g   r      e---e
+  P        oo     __*    *88*     ggg   r       e__-
+                                   g
+                                g  g
+                                 gg
+==============================================================
+by caching your application you can gain lots of speed and the faster your app runs the more users you can have
+index a particular column saying im gonna be using this a lot
+HStore
+
+GIS Geospatial - allows you to store geo points into your database (coordinates, latitude, longitude)
+
+Full-text search - allows you to search for specific text even if you mispelt it
+
+new columns! -
+
+String
+text
+datetime
+date
+time
+float
+
+Array - postgre specific
+
+new rails elephant -d postgresql
+
+inside of comfig / database.yml add in host:localhost under elephant_development
+
+check for pg gem in Gemfile
+
+have to create database manually
+rake db:create
+if it works you should be on the next line
+if its not sqlite you have to create the database
+
+generate scaffolding
+
+manually adjust and add things into database
+because its not rails its a seperate program
+rake db:migrate
+
+
+rails console - puts you in a irb with a rails enviroment
+Rails.env
+
+
+twitter bootstrap
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                              Lia's SQL Notes
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  ----------------------- Entering Development Mode -------------------
+
+// databases also have a console type thing.
+  // in terminal. make sure elephant symbol is running. \q exits console
+
+1. psql -d elephant_development
+
+  >elephant_development=#
+
+
+elephant_development=# \d animals
+                                     Table "public.animals"
+   Column   |            Type             |                      Modifiers
+------------+-----------------------------+------------------------------------------------------
+ id         | integer                     | not null default
+                                            nextval('animals_id_seq'::regclass)
+ name       | character varying(255)      |
+ breed      | character varying(255)      |
+ age        | integer                     |
+ species    | character varying(255)      |
+ created_at | timestamp without time zone |
+ updated_at | timestamp without time zone |
+Indexes:
+    "animals_pkey" PRIMARY KEY, btree (id)
+
+Modifiers column :
+  not null: makes it so something has to be there
+  default : if field is not null will automatically fill it in
+
+Type :
+  character varying(255): any unicode character allows ip to 255 characters
+
+Indexes :
+  speeds up doing querying for us when we are querying.
+
+// queries are case sensitive
+
+// to see all the data. select *(all) from (table_name); <-dont forget ;
+2. select * from animals;
+
+// what its really doing : select all columns from animals. by default sql returns columns that matches your query
+
+querying in sql only four commands you're really concerned bout
+  CRUD :
+    C - create
+    R - read
+    U - update
+    D - delete
+
+
+  ---------- BASIC RETURNS -----------
+
+// returns everything from students table
+1. select * from students;
+
+// see what tables exist
+2. \d
+
+// describe table. show table info.
+2. \d students
+
+
+  ----------------- RETURNING QUERIES -------------------
+
+// returning all queries from animals that have id of 3
+5. select * from animals where id=3;
+// other options :
+     select * from animals where name='hooty';
+     select * from animals where name like 'Animal%';
+     select * from animals where name like '%Animal%';
+
+// we can transform the data and query on the transformed version
+  // lowercases and specify column name
+6. select * from animals where lower(name) like 'animal%';
+
+// count the number of rows that match our query.
+7. select count(*) from animals where lower(name) like 'animal%';
+
+// total number of records in this table
+8. select count(*) from animals;
+
+// specify columns
+9. select name from animals;
+   select age from animals;
+
+// range of age and returns just there names
+10. select name from animals where age >=2 and age <=5;
+// will return name and age column
+    select name,age from animals where age >=2 and age <=5;
+
+// finding queries with time
+11. select created_at from animals;
+
+// finding queries from a certain time frame
+12. select id, name from animals where extract(hour from created_at) < 20;
+
+// deleting a record.
+  // deleting from a specific table and specific id
+13. delete from animals where id=11;
+
+// updating query
+14. update animals set name='Billy Goat' where id=4;
+
+// updating multiple fields
+15. update animals set breed='mountain', age=3 where id=4;
+
+// inserting new record
+  // column name. values must be inserted in same order
+16. insert into animals(name, breed, age, species) values('Jeremy', 'Crazy Male', '32', 'Human');
+
+// updating that new record
+17. update animals set created_at=now(), updated_at=now() where id=11;
+
+// limiting queries
+18. select name, age from animals where lower(name) like 'jeremy%' limit 1;
+
+// limiting queries by columns and descending order
+19. select name, age from animals where lower(name) like 'jeremy%' order by age desc limit 1;
+
+// off setting / like%
+  // word% : % after means matching anything after %
+20. elephant_development=# select name, age from animals where lower(name) like 'jeremy%' order by age desc limit 1 offset 1;
+
+
+    ---------- ARRAYS ------------
+
+// finding name value in an array
+1. select * from students where first_name in('Jason', 'Justin', 'David');
+
+
+    ------------- DATES ------------
+
+// using between with date
+1. select * from students where extract(year from birthday) between 1980 and 1990;
+
+// finding name and year
+2. select * from students where first_name='David' and extract(year from birthday) >= '1988';
+
+// finding by month
+3. select * from students where extract(month from birthday) = '10';
+
+// finding by year
+4. select * from students where extract(year from birthday) > '1985';
+
+// setting timestamp
+5. UPDATE students set birthday='1987-10-13'::timestamp where id=5;
+
+
+  ----------- DELETING/DROPPING/ALTERING -------------
+
+// delete specific row with name 'Jason'
+1. DELETE from students where first_name='Jason';
+
+// dropping a column
+2. ALTER TABLE students drop column birthday;
+
+// adding column with integer
+3. ALTER TABLE cars ADD COLUMN student_id integer;
+
+
+------------------- CREATING A NEW TABLE -------------------
+
+elephant_development=#
+
+// TABLE cars : pluralized.
+// varchar(20) : varying character limit of 20
+// not null : restriction. can't be empty
+
+1. CREATE TABLE cars (
+id bigserial primary key,
+make varchar(20) not null,
+model varchar(20) not null,
+year integer,
+created_at timestamp,
+updated_at timestamp,
+condition text
+);
+
+// adding a field/new column
+2. ALTER TABLE cars ADD COLUMN for_sale BOOLEAN DEFAULT true;
+
+// deleting a whole table
+3. DROP TABLE cars;
+
+// return make, model of cars where year is less then 2005
+4. select make,model from cars where year < 2005;
+
+// returning average
+5. select avg(year) from cars;
+   select sum(year) from cars;
+
+
+      ------------ KEY TYPES ------------
+
+2 main types of keys when it comes to tables
+
+primary : main key thats on the table. the unique identifier for each individual record.
+    usually make unique field a number so it can auto increment up.
+
+foreign : when you have another table and you reference the other tables key also. allows you to associate with another table that is related.
+
+
+  -------------------- JOINING TABLES -------------------
+
+// made a customers table with car_id
+// car_id in customers table finds and links with id in cars table.
+
+// SELECT table1.column1, table2.column2...
+    FROM table1
+    INNER JOIN table2
+    ON table1.common_filed = table2.common_field;
+
+1. SELECT make, model FROM cars INNER JOIN customers ON cars.id=customers.car_id;
+
+// another join example
+SELECT * FROM cars INNER JOIN students ON students.id=cars.student_id
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+Model
+
+a thing your modeling after some sort of real world object
+
+headphones
+
+jack wiring speakers cushions color price
+
+
+Animal.create(name: "Micky", breed: "Spider", species: "Monkey", age: 3)
+
+
+Animal.create(name: "max", age: 5, breed: "terrier", species: "Dog", trained: true)
+
+
+
+         so for a query if you say like a filter on a search you can set like order sql desending name and thats the filter
+
+         3 types of relations
+
+         1-1, 1-M(many), M - M
+
+
+
+              1-M
+        Table a has many of table b and table b belongs to table a
+
+        a tree has many branches
+        but the branches only have 1 tree
+
+
+              M - M
+        table a has many and belongs to table b and table b has many and belongs to table a
+
+        a driver has many cars
+        but a car can also have many drivers
+
+              1 - 1
+        table 1 has table 2 and table 2 belongs to table 1
+
+        a man can only have one penis
+
+
+
+    Querying
+
+    Animal.find(id) returns actual object
+
+    Animal.where returns active relation
+
+
+
+
+animal = Animal.find_by_name("Fluffy") - returns actual object
+
+
+
+=================
+Controllers
+=================
+
+Resource
+
+Views ask for information
+controller gets that information and sends it to the model
+the model picks it up from the database
+the model then returns it to the controller
+and then the controller gives it to the  views
+and hte views prints it out
+
+
+Animal(model) -> animals(controller) -> animals(views)
+
+Recourse - Models , Controllers and Views
+
+Controller -> Views
+Views      -> Controller
+            ^
+             \ _ Routes
+
+
+  Product Controller        Product Views
+
+  /products - multiple projects
+
+  /products/id - specific project by a specific id
+
+
+  instance methods are actions
+
+  get a resource
+
+  post create a new
+
+  patch to update a single field
+
+  put is to update an entire resource
+
+  delete is to delete an entire resource
+
+  Restful Resource
+
+
+R - Representational
+E -
+S - State
+T - Transfer
+
+
+      Prefix Verb   URI Pattern                  Controller#Action
+    products GET    /products(.:format)          products#index
+             POST   /products(.:format)          products#create
+ new_product GET    /products/new(.:format)      products#new
+edit_product GET    /products/:id/edit(.:format) products#edit
+     product GET    /products/:id(.:format)      products#show
+             PATCH  /products/:id(.:format)      products#update
+             PUT    /products/:id(.:format)      products#update
+             DELETE /products/:id(.:format)      products#destroy
+
+    products GET/ POST does not need to take an arguement
+    new_product does not need to take an arguement
+    edit_product needs 1 required parameter
+    product needs 1 required parameter
+
+
+         _path is a relative /products
+         _url is exact     https://products    
