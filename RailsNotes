@@ -4,11 +4,11 @@
  RRR        RRR                   iii     lll
  RRR        RRR                   iii     lll
  RRR      RRR                             lll
- RRR   RRRR          aaaaaa       iii     lll    ssssss
- RRR     RRR       aa   aaa       iii     lll   ss
- RRR      RRR      aa   aaaa      iii     lll    ssssss
- RRR       RRR     aa   aa aa     iii     lll         ss
- RRR        RRR      aaa    aa    iii     lll    ssssss
+ RRR    RRRR          aaaaaa      iii     lll    ssssss
+ RRR      RRR       aa   aaa      iii     lll   ss
+ RRR       RRR      aa   aaaa     iii     lll    ssssss
+ RRR        RRR     aa   aa aa    iii     lll         ss
+ RRR         RRR     aaa    aa    iii     lll    ssssss
 
 ****************************************************************************
 
@@ -679,4 +679,45 @@ edit_product GET    /products/:id/edit(.:format) products#edit
 
 
          _path is a relative /products
-         _url is exact     https://products    
+         _url is exact     https://products
+
+
+
+
+         resources :theaters do
+           resources :plays
+         end
+
+      find_theater
+        @theater = Theater.find(params[:id])
+      end
+
+      show
+        @play = @theater.plays.find(params[:id])
+      end
+
+
+
+
+
+
+
+on homepage , there should be a search form.
+does not need to actually work
+
+the home page should list the top theaters (not all of them)
+
+there should be a link to view ALL the theaters
+
+Clicking on a theater should show more information about that theater and list ALL of the plays for that theater
+
+style the app. no default black text on a white background
+
+# using a before_action
+class SomeController < ApplicationController
+    before_Action :find_thing
+
+    private
+    def find_thing
+    end
+end

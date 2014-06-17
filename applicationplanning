@@ -284,4 +284,25 @@ App name - Theater Express
   select theater to show theater information
   inside of the theater show the plays that play there
   select play to show the play information
-  
+
+
+
+
+
+  Theater
+    has_many :plays :seats :photo :review
+    has_one :concessions
+    Name
+    Adress
+    cost?
+    review
+
+  Plays
+    belongs_to :theater
+    has_many :actors :photo :review
+    name
+    type/category
+    maker
+    length
+    description
+    cost

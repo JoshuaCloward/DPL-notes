@@ -1,0 +1,142 @@
+What does MVC stand for?  Model, Views, Controller
+
+What is the purpose of MVC? Its a Structure/architecture, the model is based off of a real life object and the controller takes that and sends it to the views which prints it out
+
+What is the command you would use to generate a new rails application called "twitter"? rails new twitter
+
+Which file do you edit to add additional gems to your rails app? Gemfile
+
+What is the purpose of .gitignore file? to ignore specified files when uploading to github, aka not sending those file up aka passwords/db stuff
+
+What is the app/assets folder used for? javascript, css and images, basically visual aspect of hte website
+
+What is the vendor/assets folder used for? css/images/javascript that someone else wrote
+
+What is the command to create my initial database? rake db:create
+
+What is the name of the file where I define my home page url? config/routes
+
+What does Rails.env return when developing locally? Development
+
+What does Rails.root return when developing locally? The path on your computer to your rails project
+
+What is the command you use to do irb with the rails application preloaded for you? rails c
+
+What is the command to create a new model called Tweet with a message string? rails g model Tweet message:string
+
+What is the command to update your database with changes? rake db:migrate
+
+What is the purpose of migrations? to have a unique organized way to make changes to the database that is recorded uniquely on time
+
+What is the job of the controller? to send the model to the view or information from view to the model
+
+What is the command to generate a controller called tweets? rails g controller tweets
+
+Define a route for showing all the tweets in our controller and a route for showing a specific tweet: resources :tweets
+
+What is the default view templating engine in rails? erb
+
+What is the code to validate a tweet's message is required when making a new tweet? strong parameters
+
+What does REST stand for? Representational state transfer
+
+What is the purpose of rake? to handle commands that involve the database
+
+What folder can we use in our rails app to define custom rake tasks? Rakefile
+
+In rails, the method number_to_currency is a what? helper
+
+In rails, when using a relational database, all models inherit from what class? parent Primary key
+
+What is the command to create a new migration file for adding location to a tweet? rails g migration add_column location string (idk if i needed colons or not or if you wanted me to put that stuff in)
+
+In a migration file, what is the code to add a string location to the tweets table? add_column :tweets, :location, :string
+
+In SQL, how would I query for the number of records in my tweets table? select count(*) from tweets
+
+In rails, how would I query for the number of records in my Tweet model? Tweet.count
+
+What is the command to start your rails application? rails s
+
+What port does your rails application run on by default locally? localhost:3000
+
+Name 3 types of database associations: has_many, belongs_to, has_one
+
+What is params?parameters, query string parameters and post parameters
+
+What is flash? a global hash
+
+Where would you write a custom helper method? in the helper folder
+
+What is the SQL code for finding all tweets where the location is equal to "Salt Lake"? select * from animals where name='Salt Lake City';
+
+What is the rails code for finding all tweets where the location is equal to "Salt Lake"? Tweet.where(location: 'Salt Lake')
+
+What is the rails code for finding only a max of 5 tweets where the location begins with "Salt Lake"? Tweet.where('Salt Lake').take(5)
+
+When using a secific query over and over it's best to make it into a method. What type of method do we use? Private or a before_action
+
+I have this route tweet GET /tweets/:id(.:format) tweets#index. What two helper methods can I use?
+
+What does the parenthesis in a route denote? non-required parameter
+
+What do the symbols in a route mean? required parameter
+
+All pages use which HTTP verb? get
+
+Which helper method will create an html anchor tag for us? link_to
+
+Which helper method will create an html form tag for us? form_tag
+
+Which helper method will create an html password field for us? password_field_tag
+
+The instance variable @tweets can most likely be used like what data type? array
+
+What construct can we use in a view to write ruby code? erb tag <% %>
+
+What is the code to iterate over a @tweets variable in a view? <% @tweets.each do |tweet| %> <% end %>
+
+What is the method to save a newly created record to the database in rails? new/create or .save
+
+What is the method to remove a record from the database in rails? destroy
+
+What is the method to update some of the attributes of an object in rails? update/edit
+
+Aside from a tweet, what other model could twitter possibly use? user
+
+What is the command to see all of the urls defined in my rails application? rake routes
+
+What file do I use to update the styles for my application? application.css
+
+Is your brain hurting yet?
+What is the current version of rails? 4.1
+
+When was rails created? April 8th, 2014
+
+Who created rails? David Heinemeier Hansson
+
+What is the purpose of scaffolding? speed and to make a quick prototype
+
+What is a partial? render code in its own managable file
+
+How can you tell a file is a partial? it has a <% render "file" %> or its just a organized bit of view/render data
+
+PostgeSQL is what type of database? SQL database
+
+Name another database engine similar to PostgreSQL. MySQL
+
+Name a database engine that is a different type from PostgreSQL: NoSQL
+
+Are you ready for the last question?
+What is a foreign key used for? declaring that one model belongs to another Primary Key-Foreign Key
+Did you really think question 67 was the last?
+
+What method in the the routes file do I use to define my home page? root
+
+What does SASS stand for? Syntactically Awesome Style Sheets
+
+What is SASS used for? making css easier to write and to save time
+
+What gem group would you put pry-rails into? development
+
+How would you create a static "about" page? i.e. what steps would be needed? make a controller for your static pages normally reffered to as "site" then continue on to add the method into the controller called "def about" and then proceed to make the file inside of site/views
