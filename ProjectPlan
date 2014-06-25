@@ -1,0 +1,74 @@
+Project Idea/Plan/Blueprint
+
+1. TeachersHub
+2. A place where teachers can compare teaching material
+3. Features
+---------------
+  User Login
+  Searching Function
+  Post Teaching Material
+  Give Positive Feedback
+  Sorting Function
+
+4. MVP List
+--------------
+  User Login
+  Segmenting Different Grades
+  Posting Teaching Material
+  Finding Teaching Material
+  Creating Own Teaching Course/Organizing
+
+5. Remaining Features
+-----------------------
+  Sorting
+  Liking/Feedback
+
+6. Models
+-----------
+  User
+    has_many :course, :lesson
+    belongs_to :Curricurlem
+    name
+    grade
+    email
+    password
+    role
+    specialty
+    Started teaching
+
+
+  Course/Subject belongs to User
+    category/tags
+
+    has_many :lesson, :photos, :videos, :pdfs/text
+    texts/pdfs
+    pictures
+    videos
+    feedback
+    created_at
+
+
+  Lesson/Topic belongs to user, belongs to course
+    txt/pdf
+    picture
+    video
+    feedback
+    created_at
+
+  Curricurlem has_many
+    school district
+
+
+  Photo/Video belongs_to Course/Lesson
+
+----------
+7. Tools
+----------
+Sass
+Foundation/Bootstrap
+kimonolabs - searching
+don't be afraid to use gems
+select2 - mastery connect uses
+          useful for tagging/ categorizing/ searching
+
+8.
