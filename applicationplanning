@@ -118,12 +118,12 @@ By this point you should have enough information to be able to build the app
   Segmenting Different Grades
   Posting Teaching Material
   Finding Teaching Material
+  Creating Own Teaching Course/Organizing
 
 5. Remaining Features
 -----------------------
   Sorting
   Liking/Feedback
-  Creating Own Teaching Course/Organizing
 
 6. Models
 -----------
@@ -140,7 +140,9 @@ By this point you should have enough information to be able to build the app
 
 
   Course/Subject belongs to User
-    has_many :course, :photos, :videos, :pdfs/text
+    category/tags
+
+    has_many :lesson, :photos, :videos, :pdfs/text
     texts/pdfs
     pictures
     videos
@@ -158,12 +160,19 @@ By this point you should have enough information to be able to build the app
   Curricurlem has_many
     school district
 
+
   Photo/Video belongs_to Course/Lesson
 
-----------------
-
+----------
 7. Tools
 ----------
+Sass
+Foundation/Bootstrap
+kimonolabs - searching
+don't be afraid to use gems
+select2 - mastery connect uses
+          useful for tagging/ categorizing/ searching
+
 8.
 
 

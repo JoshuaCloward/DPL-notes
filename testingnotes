@@ -1,0 +1,39 @@
+test notes
+
+
+
+Minitest
+TestUnit
+RSpec is built off of doing behavior driven testing
+
+Jasmine - javascript based off of RSpec
+cucumber - plain text debugger
+steak - plain text debugger
+
+
+code katas
+==========
+
+take a small piece of code and solve that problem over and over again makign it muscle memory
+  *so when you need to solve that problem its easy and its muscle memeory
+
+  *Calculate shipping plus tax and order amount for anywhere in teh world
+
+  *ensure game character doesn't fall/walk through walls unless its a fake wall. ghost can though
+  *parse text file containing 2 million lines and create new textfiles broken into 20,000 lines with new format
+
+  *find results based off of a search  query
+
+  *replace tokens in blog post with dynamic value
+
+
+  fizz buzz
+
+  if the number is divisible by 3 you say fizz
+
+  if the number is divisible by 5 you say buzz
+
+  if the number is divisible by 3 and 5 you say fizzbuzz
+
+
+tdd test driven development

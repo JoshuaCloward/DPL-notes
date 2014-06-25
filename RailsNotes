@@ -4,7 +4,7 @@
  RRR        RRR                   iii     lll
  RRR        RRR                   iii     lll
  RRR      RRR                             lll
- RRR    RRRR          aaaaaa      iii     lll    ssssss
+ RRR   RRRRR          aaaaaa      iii     lll    ssssss
  RRR      RRR       aa   aaa      iii     lll   ss
  RRR       RRR      aa   aaaa     iii     lll    ssssss
  RRR        RRR     aa   aa aa    iii     lll         ss
@@ -721,3 +721,61 @@ class SomeController < ApplicationController
     def find_thing
     end
 end
+
+
+
+User
+
+Member
+
+Admin
+
+Student
+
+
+
+
+Email -
+Username -
+account number - 1234
+
+password - meatball
+
+
+Encryption
+------
+SHA1
+MD5 - cannot be decrypted
+
+password = 'meatball'
+
+Digest::MD5.hexdigest(password) = "sdfgss5a76sdf888as7"
+
+Digest::MD5.hexdigest(password) = password   true
+
+password = 'meatball'
+
+salt = Time.now.to_i = 54321233
+
+password + salt.to_s
+
+meatball54321233
+
+Digest::MD5.hexdigest(password + salt) = "4hg43iuh53g2k1jhj56gb23n4kjokl4"
+
+Digest::MD5.hexdigest(password + salt) = meatball54321233  false
+
+user = User.new
+
+user.name = "Joshua"
+user.email = "Joshua@test.com"
+user.password = "password"
+user.password_confirmation = "password"
+
+user.role = :admin
+
+email@email.com
+password
+
+joshua@test.com
+password

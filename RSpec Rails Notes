@@ -1,0 +1,263 @@
+RSpec Rails Notes
+
+
+put in the gems
+
+Gemfile
+-------------------
+		group :test do
+		  gem 'shoulda-matchers'
+		  gem 'database_cleaner'
+		end
+
+		group :development, :test do
+		  gem 'ffaker'
+		  gem 'rspec-rails'
+		  gem 'pry-rails'
+		  gem 'factory_girl_rails'
+		end
+
+-------------------
+rails generate rspec:install
+-------------------
+
+Rails_Spec
+-------------------
+add certain files into rails_spec
+		DatabaseCleaner.strategy = :transaction
+		  config.include FactoryGirl::Syntax::Methods
+		  config.filter_run focus: true
+		  config.run_all_when_everything_filtered = true
+		  config.before :each do
+		    DatabaseCleaner.start
+		  end
+		  config.after :each do
+		    DatabaseCleaner.clean
+		  end
+
+-------------------
+rspec
+-------------------
+
+-------------------
+rails g model users
+-------------------
+
+-------------------
+rake db:migrate
+-------------------
+
+factories > users
+-------------------
+
+		first_name{ Faker::Name.first_name}
+	    last_name{ Faker::Name.last_name}
+	    birthday{rand(30).years.ago}
+	    email{Faker::Internet.email}
+	    github_username{Faker::Internet.user_name}
+	    hobbies{Faker::BaconIpsum.words.join(', ')}
+	    active{ true }
+	  end
+
+
+	  rails c
+
+	  u = FactoryGirl.create(:user)
+
+spec models user
+-------------------
+take out the pending line
+
+  describe 'validations', :focus do
+      it { should validate_presence_of :first_name }
+    end
+
+models user
+-------------------
+	validates :first_name, presence: true
+
+.rspec take out -- warnings
+
+
+Spec models user
+-------------------
+    describe '#name', :focus do
+      before do
+        @user = create(:user, first_name: 'Bill', last_name: 'Rogers')
+      end
+      it 'returns Bill Rogers' do
+        expect(@user.name).to eq 'Bill Rogers'
+      end
+    end
+
+Models User
+-------------------
+
+  validates :first_name, :last_name, presence: true
+
+  def name
+    [first_name, last_name].join(' ')
+  end
+
+
+
+Spec Models User
+-------------------
+    describe '#age', :focus do
+      before do
+        @user = create(:user, birthday: '1990-01-01')
+      end
+      it 'returns 24' do
+        expect(@user.age).to eq 24
+      end
+    end
+
+
+Models User
+-------------------
+
+def age
+    Time.now.year = birthday.year
+  end
+
+
+
+Gemfile
+-------------------
+
+  gem 'timecop'
+
+  bundle
+
+
+  spec models user
+
+
+  Timecop.freeze(Time.local(2014))
+  insde of age class
+
+after do
+  Timecop.return
+ end
+
+
+
+SPEC MODELS USER
+-------------------
+    describe '#inactive?', :focus do
+      before do
+        @user = create(:user, active: false)
+      end
+      it 'returns true for when active is false' do
+        expect(@user).to be_inactive
+      end
+    end
+
+
+
+
+
+MODELS USER
+-------------------
+   def inactive?
+    !active
+  end
+
+
+
+
+Spec Models User
+-------------------
+    describe '.by_first_name', :focus do
+      before do
+        create(:user, first_name: 'Justin', last_name: 'Viers')
+        create(:user, first_name: 'Justin', last_name: 'Ruiz')
+        create(:user, first_name: 'Landon', last_name: 'West')
+      end
+      it 'returns 2 users' do
+        expect(User.by_first_name('Justin'.count).to eq 2
+      end
+    end
+
+
+ Models User
+---------------
+    def self.by_first_name(first_name)
+    where(first_name: first_name)
+
+  end
+
+
+ SPEC MODEL USER
+-------------------
+        it 'does not include landon' do
+        expect(User.by_first_name('Justin').collect(&:first_name)).to_not include 'Landon'
+      end
+
+-------------------
+rails g model assignments
+-------------------
+
+model assignemnts
+-------------------
+      t.belongs_to :user
+      t.text :text
+      t.boolean :complete, default: false
+    end
+      add_index :assignments, :user_id
+
+
+
+Spec Model User
+-------------------
+    describe 'assoctiations', :focus do
+      it { should have_many :assignments }
+    end
+
+
+ model User
+ -------------------
+ has_many :assignments
+
+
+
+
+
+---------------------
+Make Tests For ASsignments
+---------------------
+
+
+
+models assignment_spec
+ -------------------
+      text { Faker::BaconIpsum.paragraph }
+      complete { false }
+
+models
+  describe 'assoctiations' do
+    it { should belong_to :user }
+  end
+
+  describe 'validations' do
+    it { should validate_presence_of :text }
+  end
+
+  describe 'incomplete?' do
+    before do
+      @assignment = create(:assignment)
+    end
+    it 'returns true for when incomplete is false' do
+      expect(@assignment).to be_incomplete
+    end
+  end
+
+  models assignment
+--------------------
+    belongs_to :user
+
+  validates :text, presence: true
+
+  def incomplete?
+    !complete
+  end
